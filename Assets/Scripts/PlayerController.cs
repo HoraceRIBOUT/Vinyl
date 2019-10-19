@@ -16,8 +16,12 @@ public class PlayerController : MonoBehaviour
     [Header("Jump part")]
     public string jumpAxis = "Jump";
     public Transform jumpingPart;
-    public Vector3 jumpForce;//?
+    /*public Vector3 jumpForce;//?
+    */
 
+    public AnimationCurve jumpCurve;
+    public Vector2 speedOnBothAxis = new Vector2(1, 1);
+    public bool jumpingIn = false;
 
 
 
@@ -39,8 +43,17 @@ public class PlayerController : MonoBehaviour
             return;
 
 
-        if (Input.GetAxis(jumpAxis) != 0)
+        if (Input.GetAxis(jumpAxis) != 0 && !jumpingIn)
+        {
             Jump();
+
+            Debug.Log("Oh");
+        }
+        else
+        {
+
+            Debug.Log(Input.GetAxis(jumpAxis) +" vs in : "+jumpingIn);
+        }
 
         //Follow the ground : 
         float y = 0;
@@ -73,10 +86,54 @@ public class PlayerController : MonoBehaviour
     
     void Jump()
     {
-        float y = 0;
-
-        // y = .5f * (a0 / (v0² *cos² alpha)) x² +x * Mathf.Tan(alpha);
-        
+        Debug.Log("Jump");
+        StartCoroutine(jumping());
     }
+
+    IEnumerator jumping()
+    {
+        jumpingIn = true;
+        float timer = 0;
+        while (jumpingPart.localPosition.y >= 0)
+        {
+            float y = 0;
+
+            y = jumpCurve.Evaluate(timer * speedOnBothAxis.x) * speedOnBothAxis.y;
+            timer += Time.deltaTime;
+
+            jumpingPart.localPosition = new Vector3(jumpingPart.localPosition.x, y, jumpingPart.localPosition.z); //brrr,non pas ça, beurk
+            yield return new WaitForSeconds(1f / 30f);
+        }
+        jumpingPart.localPosition = new Vector3(jumpingPart.localPosition.x, 0, jumpingPart.localPosition.z);
+        jumpingIn = false;
+    }
+
+    /*
+    IEnumerator jumping()
+    {
+        //Launch the jump : 
+        float progressionJump = 0;
+
+        float alpha = 45;
+        //A tweaker : 
+        float acc = 1;
+        float vit = 1;
+
+        while (jumpingPart.position.y > 0)
+        {
+            float y = 0;
+
+
+            y = .5f * (acc) * (1f / Mathf.Pow(Mathf.Cos(vit * alpha), 2)) * Mathf.Pow(progressionJump, 2) + progressionJump * Mathf.Tan(alpha);
+
+            jumpingPart.position = new Vector3(jumpingPart.position.x, y, jumpingPart.position.z);
+            yield return new WaitForSeconds(1 / 30f);
+            progressionJump += Time.deltaTime;
+        }
+        
+        jumpingPart.position = new Vector3(jumpingPart.position.x, 0, jumpingPart.position.z);
+    }
+    */
+
 
 }
