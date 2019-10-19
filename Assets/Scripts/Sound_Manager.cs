@@ -19,7 +19,7 @@ public class Sound_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void Update()
@@ -31,6 +31,4 @@ public class Sound_Manager : MonoBehaviour
             Debug.Log("Call the event " + testEvent.Id);
         }
     }
-
-
 }

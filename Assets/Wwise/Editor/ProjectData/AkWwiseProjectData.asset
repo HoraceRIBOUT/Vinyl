@@ -91,7 +91,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Vinyl_WwiseProject
-  - /Vinyl_WwiseProject/Banks
-  - /Vinyl_WwiseProject/Banks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
