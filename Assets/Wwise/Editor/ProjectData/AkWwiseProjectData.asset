@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: f3cb43df8a6cea4bbd0739f1df0c7821
     GuidInternal: 
-    m_lastTime: -8586301111332903256
+    m_lastTime: -8586301026988462043
     List:
     - name: Main
       guid: 2bc71775a4ba0241b1fb82bd4dbe36c7
@@ -47,8 +47,20 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 14d54fc18c8e8440bc15d94ee4049a81
     GuidInternal: 
-    m_lastTime: -8586301111332942980
+    m_lastTime: -8586301026988412189
     List:
+    - name: Start
+      guid: 9d4fd1071cf33145ade32c8c355796e9
+      id: 1281810935
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Start
+        ObjectType: 3
+      Path: Default Work Unit\Start
+      maxAttenuation: 0
+      maxDuration: 105.230774
+      minDuration: 105.230774
     - name: Test
       guid: 62009ca15e10ff408f08fb0e2124026a
       id: 3157003241
@@ -91,5 +103,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Vinyl_WwiseProject
+  - /Vinyl_WwiseProject/Events
+  - /Vinyl_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
