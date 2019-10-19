@@ -431,5 +431,16 @@ PrefabInstance:
       propertyPath: ani
       value: 
       objectReference: {fileID: 828251596}
+    - target: {fileID: 8958141250097388355, guid: 26e34e48c40127f41a718a73c6c55cf3,
+        type: 3}
+      propertyPath: startEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: c3e749302d935684f87e8df6855fb804,
+        type: 2}
+    - target: {fileID: 8958141250097388355, guid: 26e34e48c40127f41a718a73c6c55cf3,
+        type: 3}
+      propertyPath: testEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e34e48c40127f41a718a73c6c55cf3, type: 3}
