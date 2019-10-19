@@ -6,12 +6,19 @@ public class PlayerController : MonoBehaviour
 {
     public bool playable = true;
 
-    public float movementSpeedAtMax;
-    public AnimationCurve speedUp;
-    public AnimationCurve speedDown;
+    [HideInInspector]
+    public Vector3 inverseMovement;
 
-    private float acceleration = 0;
-    private float currentSpeed = 0;
+    [Header("Heighness")]
+    private WorldMovement worldMove;
+    public float progression = -11;
+
+    [Header("Jump part")]
+    public string jumpAxis = "Jump";
+    public Transform jumpingPart;
+    public Vector3 jumpForce;//?
+
+
 
 
 
@@ -21,39 +28,55 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        worldMove = GameManager.instance.worldMove;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 movementForThisFrame = inverseMovement * Time.deltaTime;
         if (!playable)
             return;
 
-        float xStick = Input.GetAxis("Horizontal");
-        //float yStick = Input.GetAxis("Vertical");
 
-        Deplacement(xStick);
-        
-    }
+        if (Input.GetAxis(jumpAxis) != 0)
+            Jump();
 
-    void Deplacement(float xStick)
-    {
-        if (xStick == 0 && currentSpeed == 0)
-            return;
-
-        Vector3 movementFinal = Vector3.right;
-
-        /*if(acceleration < 1 && xStick != 0)
+        //Follow the ground : 
+        float y = 0;
+        if (progression > -2)
         {
-            acceleration += xStick * ;
+            float realPos = progression / 2f;
+            int dotIndex = (int)realPos;
+            float lerpValue = realPos - (float)dotIndex;
+
+            Vector3 posA = Vector3.zero;
+            if (progression > 0)
+                posA = worldMove.eachDotFromMusique[dotIndex].transform.position;
+            else
+            {
+                lerpValue = 1 + lerpValue;
+                dotIndex = -1;
+            }
+            Vector3 posB = worldMove.eachDotFromMusique[dotIndex + 1].transform.position;
+
+            Vector3 posReal = Vector3.Lerp(posA, posB, lerpValue);
+            y = posReal.y;
         }
 
-        movementSpeedAtMax
-            speedUp*/
+        movementForThisFrame.y = (this.transform.position.y * -1) + y;
+        
+        this.transform.Translate(movementForThisFrame);
 
-        movementFinal *= movementSpeedAtMax * xStick;
+        progression += Time.deltaTime;
+    }
+    
+    void Jump()
+    {
+        float y = 0;
 
-        this.transform.Translate(movementFinal);
+        // y = .5f * (a0 / (v0² *cos² alpha)) x² +x * Mathf.Tan(alpha);
+        
     }
 
 }
