@@ -51,16 +51,10 @@ public class WorldMovement : MonoBehaviour
         }
     }
 
-    float lastBeatTime = 0;
 
     public void Beat()
     {
-        //calcul how long between each beat :
-        //print("Beat timing : " + Time.timeSinceLevelLoad - lastBeatTime);
-        lastBeatTime = Time.timeSinceLevelLoad;
-
         CreateNextDot();
-
     }
     
 

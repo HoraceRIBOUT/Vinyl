@@ -67,31 +67,72 @@ public class PlayerController : MonoBehaviour
         float y = 0;
         if (progression > -2)
         {
-            float realPos = progression / 2f;
-            int dotIndex = (int)realPos;
-            float lerpValue = realPos - (float)dotIndex;
-
-            Vector3 posA = Vector3.zero;
-            if (progression > 0)
-                posA = worldMove.eachDotFromMusique[dotIndex].transform.position;
-            else
-            {
-                lerpValue = 1 + lerpValue;
-                dotIndex = -1;
-            }
-            Vector3 posB = worldMove.eachDotFromMusique[dotIndex + 1].transform.position;
-
-            Vector3 posReal = Vector3.Lerp(posA, posB, lerpValue);
-            y = posReal.y;
+            y = ProgressionUpdate();
         }
 
         movementForThisFrame.y = (this.transform.position.y * -1) + y;
         
         this.transform.Translate(movementForThisFrame);
-
-        progression += Time.deltaTime;
+        
+        progression += Time.deltaTime * (inverseMovement.x);
     }
-    
+
+    public float debugVaLl = 1f;
+    public float seeOtherValue = 0;
+
+    float ProgressionUpdate()
+    {
+        float distanceAssumee = inverseMovement.x * GameManager.instance.beatTiming;//replace by the beat of that point and reset the progression
+        float realPos = progression * (1f / (distanceAssumee));
+        int dotIndex = (int)realPos;
+
+        //Debug.Log("DotIndex : " + dotIndex);
+
+        float lerpValue = realPos - (float)dotIndex;
+
+        seeOtherValue = lerpValue;
+
+        Vector3 posA = Vector3.zero;
+        if (progression > 0)
+            posA = worldMove.eachDotFromMusique[dotIndex].transform.position;
+        else
+        {
+            lerpValue = 1 + lerpValue;
+            dotIndex = -1;
+        }
+        Vector3 posB = worldMove.eachDotFromMusique[dotIndex + 1].transform.position;
+
+        Vector3 posReal = Vector3.Lerp(posA, posB, lerpValue);
+        return posReal.y;
+
+        /*
+        float realPos = progression * (1f/ (distanceAssumee));//GameManager.instance.beatTiming * 0.5f; // distance made between each. If -1 speed set the 2f , then...
+
+        if ((int)realPos != 1){
+            currentdotIndex++;
+            progression = 0.001f;
+        }
+
+        //Debug.Log("DotIndex : " + dotIndex);
+
+        float lerpValue = realPos;
+
+        seeOtherValue = lerpValue;
+
+        Vector3 posA = Vector3.zero;
+        if (progression > 0)
+            posA = worldMove.eachDotFromMusique[currentdotIndex].transform.position;
+        else
+        {
+            lerpValue = 1 + lerpValue;
+            currentdotIndex = -1;
+        }
+        Vector3 posB = worldMove.eachDotFromMusique[currentdotIndex + 1].transform.position;
+
+        Vector3 posReal = Vector3.Lerp(posA, posB, lerpValue);
+        return posReal.y;*/
+    }
+
     void Jump()
     {
         Debug.Log("Jump");
