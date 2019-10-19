@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdeab85833276e4190dc297ec5a142e, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 31242bbb048d1e439b52a1555c553df2
+    GuidInternal: 
+    m_lastTime: -8586301111333291947
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: ecd0bc4cb4be8d43af43ffd4fa3ab549
+    GuidInternal: 
+    m_lastTime: -8586301111332983048
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: f3cb43df8a6cea4bbd0739f1df0c7821
+    GuidInternal: 
+    m_lastTime: -8586301111332903256
+    List:
+    - name: Main
+      guid: 2bc71775a4ba0241b1fb82bd4dbe36c7
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: Default Work Unit\Main
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 14d54fc18c8e8440bc15d94ee4049a81
+    GuidInternal: 
+    m_lastTime: -8586301111332942980
+    List:
+    - name: Test
+      guid: 62009ca15e10ff408f08fb0e2124026a
+      id: 3157003241
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Test
+        ObjectType: 3
+      Path: Default Work Unit\Test
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 20470d032cb1eb4e8fca1639c76b7f4c
+    GuidInternal: 
+    m_lastTime: -8586301111333391678
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: bc661f9c6fd0014187805fce4c0e2797
+    GuidInternal: 
+    m_lastTime: -8586301111333032635
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: dcbc889dbec99741abd351c387a851ab
+    GuidInternal: 
+    m_lastTime: -8586301111333072534
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 4a12a08d6b996d4aa64320df83b58a92
+    GuidInternal: 
+    m_lastTime: -8586301111333341795
+    List: []
+  ExpandedItems:
+  - /Vinyl_WwiseProject
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
