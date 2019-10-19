@@ -26,11 +26,29 @@ public class Sound_Manager : MonoBehaviour
     {
         AkSoundEngine.PostEvent(startEvent.Id, this.gameObject);
 
-        startEvent.Post(this.gameObject, (uint)AkCallbackType.AK_MusicSyncBeat, CallBackFunction);
+        startEvent.Post(this.gameObject, (uint)AkCallbackType.AK_MusicSyncBeat 
+                                        | (uint)AkCallbackType.AK_EndOfEvent
+                                        | (uint)AkCallbackType.AK_MusicSyncBar
+                                        | (uint)AkCallbackType.AK_MusicSyncAll, CallBackFunction, this);
     }
 
     private void CallBackFunction(object baseObject, AkCallbackType type, object info)
     {
+        switch (type)
+        {
+            case AkCallbackType.AK_EndOfEvent:
+                Debug.Log("Call by " + type + " time = " + Time.timeSinceLevelLoad);
+                break;
+            case AkCallbackType.AK_MusicSyncBeat:
+                Debug.Log("Call by " + type + " time = " + Time.timeSinceLevelLoad);
+                break;
+            case AkCallbackType.AK_MusicSyncBar:
+                Debug.Log("Call by " + type + " time = " + Time.timeSinceLevelLoad);
+                break;
+            case AkCallbackType.AK_MusicSyncAll:
+                Debug.Log("Call by " + type + " time = "+ Time.timeSinceLevelLoad);
+                break;
+        }
         Beat();
     }
 
@@ -52,4 +70,8 @@ public class Sound_Manager : MonoBehaviour
             Debug.Log("Call the event " + testEvent.Id);
         }
     }
+
+
+
+
 }

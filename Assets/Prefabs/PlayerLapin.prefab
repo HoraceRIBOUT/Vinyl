@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playable: 1
   inverseMovement: {x: 0, y: 0, z: 0}
+  _animator: {fileID: 8320763135327743574}
   progression: -11
   jumpAxis: Jump
   jumpingPart: {fileID: 45352628308047220}
@@ -237,6 +238,12 @@ PrefabInstance:
 --- !u!4 &8320763135327743569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5805248507661704511, guid: 09178ce5df6d3374ab9fc6b7dd133ce5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2587647009970910062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8320763135327743574 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5805248507661704504, guid: 09178ce5df6d3374ab9fc6b7dd133ce5,
     type: 3}
   m_PrefabInstance: {fileID: 2587647009970910062}
   m_PrefabAsset: {fileID: 0}
