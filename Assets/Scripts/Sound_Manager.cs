@@ -27,38 +27,41 @@ public class Sound_Manager : MonoBehaviour
         AkSoundEngine.PostEvent(startEvent.Id, this.gameObject);
 
         startEvent.Post(this.gameObject, (uint)AkCallbackType.AK_MusicSyncBeat 
-                                        | (uint)AkCallbackType.AK_EndOfEvent
-                                        | (uint)AkCallbackType.AK_MusicSyncBar
-                                        | (uint)AkCallbackType.AK_MusicSyncAll, CallBackFunction, this);
+                                       | (uint)AkCallbackType.AK_MusicSyncBar, CallBackFunction, this);
     }
 
     private void CallBackFunction(object baseObject, AkCallbackType type, object info)
     {
         switch (type)
         {
-            case AkCallbackType.AK_EndOfEvent:
-                Debug.Log("Call by " + type + " time = " + Time.timeSinceLevelLoad);
-                break;
             case AkCallbackType.AK_MusicSyncBeat:
-                Debug.Log("Call by " + type + " time = " + Time.timeSinceLevelLoad);
+                //Debug.Log("Call by " + type + " time = " + Time.timeSinceLevelLoad);
+                Beat();
                 break;
             case AkCallbackType.AK_MusicSyncBar:
-                Debug.Log("Call by " + type + " time = " + Time.timeSinceLevelLoad);
-                break;
-            case AkCallbackType.AK_MusicSyncAll:
-                Debug.Log("Call by " + type + " time = "+ Time.timeSinceLevelLoad);
+                //Debug.Log("Call by " + type + " time = " + Time.timeSinceLevelLoad);
+                Bar();
                 break;
         }
-        Beat();
     }
 
     [ContextMenu("Beat")]
     public void Beat()
     {
-        ani.SetTrigger("Beat");
-        float ran = Random.Range(0f, 1f);
-        foreach (SpriteRenderer sR in ani.GetComponentsInChildren<SpriteRenderer>())
-            sR.color = Color.HSVToRGB(ran, 1, 1);
+        if(ani != null)
+        {
+            float ran = Random.Range(0f, 1f);
+            foreach (SpriteRenderer sR in ani.GetComponentsInChildren<SpriteRenderer>())
+                sR.color = Color.HSVToRGB(ran, 1, 1);
+        }
+
+        GameManager.instance.worldMove.Beat();
+    }
+
+    [ContextMenu("Bar")]
+    public void Bar()
+    {
+        
     }
 
 
