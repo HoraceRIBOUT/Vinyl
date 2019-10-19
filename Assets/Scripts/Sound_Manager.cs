@@ -14,11 +14,23 @@ public class Sound_Manager : MonoBehaviour
             Debug.LogError("Already the Sound_Manager");
     }
 
+    public AK.Wwise.Event testEvent;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Call the event " + testEvent.Id);
+            AkSoundEngine.PostEvent(testEvent.Id, this.gameObject);
+            Debug.Log("Call the event " + testEvent.Id);
+        }
+    }
+
 
 }
