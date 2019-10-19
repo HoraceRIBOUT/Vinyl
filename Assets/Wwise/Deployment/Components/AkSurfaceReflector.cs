@@ -11,14 +11,19 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 	/// All triangles of the component's mesh will be applied with this texture. The texture will change the filter parameters of the sound reflected from this component.
 	public AK.Wwise.AcousticTexture AcousticTexture = new AK.Wwise.AcousticTexture();
 
-	[UnityEngine.Header("Geometric Diffraction (Experimental)")]
 	[UnityEngine.Tooltip("Enable or disable geometric diffraction for this mesh.")]
 	/// Switch to enable or disable geometric diffraction for this mesh.
 	public bool EnableDiffraction = false;
 
-	[UnityEngine.Tooltip("Enable or disable geometric diffraction on boundary edges for this mesh.  Boundary edges are edges that are connected to only one triangle.")]
+	[UnityEngine.Tooltip("Enable or disable geometric diffraction on boundary edges for this mesh. Boundary edges are edges that are connected to only one triangle.")]
 	/// Switch to enable or disable geometric diffraction on boundary edges for this mesh.  Boundary edges are edges that are connected to only one triangle.
 	public bool EnableDiffractionOnBoundaryEdges = false;
+
+	[UnityEngine.Tooltip("Optional room with which this surface reflector is associated. " +
+		"It is recommended to associate geometry with a particular room if the geometry is fully contained within the room and the room does not share any geometry with any other rooms. " +
+		"Doing so reduces the search space for ray casting performed by reflection and diffraction calculations.")]
+	/// Optional room with which this surface reflector is associated. It is recommended to associate geometry with a particular room if the geometry is fully contained within the room and the room does not share any geometry with any other rooms. Doing so reduces the search space for ray casting performed by reflection and diffraction calculations.
+	public AkRoom AssociatedRoom = null;
 
 	private UnityEngine.MeshFilter MeshFilter;
 
@@ -32,7 +37,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 	/// </summary>
 	/// <param name="acousticTexture"></param>
 	/// <param name="meshFilter"></param>
-	public static void AddGeometrySet(AK.Wwise.AcousticTexture acousticTexture, UnityEngine.MeshFilter meshFilter, bool enableDiffraction, bool enableDiffractionOnBoundaryEdges)
+	public static void AddGeometrySet(AK.Wwise.AcousticTexture acousticTexture, UnityEngine.MeshFilter meshFilter, ulong roomID, bool enableDiffraction, bool enableDiffractionOnBoundaryEdges)
 	{
 		if (!AkSoundEngine.IsInitialized())
 			return;
@@ -98,7 +103,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 							}
 						}
 
-						AkSoundEngine.SetGeometry(GetAkGeometrySetID(meshFilter), triangleArray, (uint)triangleArray.Count(), vertexArray, (uint)vertexArray.Count(), surfaceArray, (uint)surfaceArray.Count(), enableDiffraction, enableDiffractionOnBoundaryEdges);
+						AkSoundEngine.SetGeometry(GetAkGeometrySetID(meshFilter), triangleArray, (uint)triangleArray.Count(), vertexArray, (uint)vertexArray.Count(), surfaceArray, (uint)surfaceArray.Count(), roomID, enableDiffraction, enableDiffractionOnBoundaryEdges);
 					}
 				}
 			}
@@ -137,12 +142,17 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 
 	private void OnEnable()
 	{
+
 #if UNITY_EDITOR
 		if (UnityEditor.BuildPipeline.isBuildingPlayer || AkUtilities.IsMigrating || !UnityEditor.EditorApplication.isPlaying)
 			return;
 #endif
 
-		AddGeometrySet(AcousticTexture, MeshFilter, EnableDiffraction, EnableDiffractionOnBoundaryEdges);
+		ulong roomID = AkRoom.INVALID_ROOM_ID;
+		if (AssociatedRoom != null)
+			roomID = AssociatedRoom.GetID();
+
+		AddGeometrySet(AcousticTexture, MeshFilter, roomID, EnableDiffraction, EnableDiffractionOnBoundaryEdges);
 	}
 
 	private void OnDisable()
@@ -163,12 +173,14 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 		private UnityEditor.SerializedProperty AcousticTexture;
 		private UnityEditor.SerializedProperty EnableDiffraction;
 		private UnityEditor.SerializedProperty EnableDiffractionOnBoundaryEdges;
+		private UnityEditor.SerializedProperty AssociatedRoom;
 
 		public void OnEnable()
 		{
 			AcousticTexture = serializedObject.FindProperty("AcousticTexture");
 			EnableDiffraction = serializedObject.FindProperty("EnableDiffraction");
 			EnableDiffractionOnBoundaryEdges = serializedObject.FindProperty("EnableDiffractionOnBoundaryEdges");
+			AssociatedRoom = serializedObject.FindProperty("AssociatedRoom");
 		}
 
 		public override void OnInspectorGUI()
@@ -180,6 +192,8 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 			UnityEditor.EditorGUILayout.PropertyField(EnableDiffraction);
 			if (EnableDiffraction.boolValue)
 				UnityEditor.EditorGUILayout.PropertyField(EnableDiffractionOnBoundaryEdges);
+
+			UnityEditor.EditorGUILayout.PropertyField(AssociatedRoom);
 
 			serializedObject.ApplyModifiedProperties();
 		}

@@ -196,6 +196,9 @@ public class AkPluginActivator
 				return "tvOS";
 
 			case UnityEditor.BuildTarget.StandaloneLinux:
+				UnityEngine.Debug.LogError("WwiseUnity: The Linux Wwise Unity integration does not support the 32 bits architecture");
+				return "Linux";
+				
 			case UnityEditor.BuildTarget.StandaloneLinux64:
 			case UnityEditor.BuildTarget.StandaloneLinuxUniversal:
 				return "Linux";
@@ -249,7 +252,7 @@ public class AkPluginActivator
 		if (!RequiresStaticPluginRegistration(target))
 			return;
 
-		string deployementTargetName = GetPluginDeploymentPlatformName(target);
+		string deploymentTargetName = GetPluginDeploymentPlatformName(target);
 
 		var staticPluginRegistration = new StaticPluginRegistration(target);
 		var importers = UnityEditor.PluginImporter.GetAllImporters();
@@ -262,7 +265,7 @@ public class AkPluginActivator
 
 			// Path is Assets/Wwise/Deployment/Plugins/Platform. We need the platform string
 			var pluginPlatform = splitPath[4];
-			if (pluginPlatform != deployementTargetName)
+			if (pluginPlatform != deploymentTargetName)
 				continue;
 
 			var pluginConfig = string.Empty;
@@ -302,16 +305,21 @@ public class AkPluginActivator
 			staticPluginRegistration.TryAddLibrary(pluginImporter.assetPath);
 		}
 
-		var missingPlugins = staticPluginRegistration.GetMissingPlugins(s_PerPlatformPlugins[deployementTargetName]);
+		System.Collections.Generic.HashSet<AkPluginInfo> plugins = null;
+		s_PerPlatformPlugins.TryGetValue(deploymentTargetName, out plugins);
+		var missingPlugins = staticPluginRegistration.GetMissingPlugins(plugins);
 		if (missingPlugins.Count == 0)
 		{
+			if (plugins == null)
+				UnityEngine.Debug.LogWarningFormat("WwiseUnity: The activated Wwise plug-ins may not be correct. Could not read PluginInfo.xml for platform: {0}", deploymentTargetName);
+
 			staticPluginRegistration.TryWriteToFile();
 		}
 		else
 		{
 			UnityEngine.Debug.LogErrorFormat(
-				"WwiseUnity: These plugins used by the Wwise project are missing from the Unity project: {0}. Please check folder Assets/Wwise/Deployment/Plugin/{1}.", 
-				string.Join(", ", missingPlugins.ToArray()), deployementTargetName);
+				"WwiseUnity: These plugins used by the Wwise project are missing from the Unity project: {0}. Please check folder Assets/Wwise/Deployment/Plugin/{1}.",
+				string.Join(", ", missingPlugins.ToArray()), deploymentTargetName);
 		}
 	}
 
@@ -425,20 +433,23 @@ public class AkPluginActivator
 					pluginArch = splitPath[5];
 					pluginConfig = splitPath[6];
 
+					pluginImporter.SetPlatformData(UnityEditor.BuildTarget.WSAPlayer, "SDK", "AnySDK");
+
 					if (pluginArch == "WSA_UWP_Win32")
 					{
-						pluginImporter.SetPlatformData(UnityEditor.BuildTarget.WSAPlayer, "SDK", "AnySDK");
 						pluginImporter.SetPlatformData(UnityEditor.BuildTarget.WSAPlayer, "CPU", "X86");
 					}
 					else if (pluginArch == "WSA_UWP_x64")
 					{
-						pluginImporter.SetPlatformData(UnityEditor.BuildTarget.WSAPlayer, "SDK", "AnySDK");
 						pluginImporter.SetPlatformData(UnityEditor.BuildTarget.WSAPlayer, "CPU", "X64");
 					}
 					else if (pluginArch == "WSA_UWP_ARM")
 					{
-						pluginImporter.SetPlatformData(UnityEditor.BuildTarget.WSAPlayer, "SDK", "AnySDK");
 						pluginImporter.SetPlatformData(UnityEditor.BuildTarget.WSAPlayer, "CPU", "ARM");
+					}
+					else if (pluginArch == "WSA_UWP_ARM64")
+					{
+						pluginImporter.SetPlatformData(UnityEditor.BuildTarget.WSAPlayer, "CPU", "ARM64");
 					}
 					break;
 
@@ -1006,14 +1017,17 @@ void *_pluginName_##_fp = (void*)&_pluginName_##Registration;
 
 		public System.Collections.Generic.List<string> GetMissingPlugins(System.Collections.Generic.HashSet<AkPluginInfo> usedPlugins)
 		{
-			System.Collections.Generic.List<string> pluginList = new System.Collections.Generic.List<string>();
+			var pluginList = new System.Collections.Generic.List<string>();
+			if (usedPlugins == null)
+				return pluginList;
+
 			foreach (var plugin in usedPlugins)
 			{
-				if(string.IsNullOrEmpty(plugin.StaticLibName))
+				if (string.IsNullOrEmpty(plugin.StaticLibName))
 				{
 					continue;
 				}
-				
+
 				string includeFilename = plugin.StaticLibName + "Factory.h";
 				if (!FactoriesHeaderFilenames.Contains(includeFilename))
 				{

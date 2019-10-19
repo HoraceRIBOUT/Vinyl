@@ -6,7 +6,7 @@
 /// @details 
 public class AkRoom : AkTriggerHandler
 {
-	public static ulong INVALID_ROOM_ID = unchecked((ulong) -1.0f);
+	public static ulong INVALID_ROOM_ID = unchecked((ulong)-1.0f);
 
 	private static int RoomCount;
 
@@ -66,11 +66,9 @@ public class AkRoom : AkTriggerHandler
 
 		RoomCount++;
 		AkSoundEngine.SetRoom(GetID(), roomParams, name);
-	}
 
-	protected override void Start()
-	{
-		base.Start();
+		/// In case a room is disabled and re-enabled. 
+		AkRoomPortalManager.RegisterRoomUpdate(this);
 	}
 
 	public override void HandleEvent(UnityEngine.GameObject in_gameObject)
@@ -80,6 +78,8 @@ public class AkRoom : AkTriggerHandler
 
 	private void OnDisable()
 	{
+		AkRoomPortalManager.RegisterRoomUpdate(this);
+
 		RoomCount--;
 		AkSoundEngine.RemoveRoom(GetID());
 	}

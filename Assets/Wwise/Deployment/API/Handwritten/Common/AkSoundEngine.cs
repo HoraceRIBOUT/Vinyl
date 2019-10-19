@@ -159,7 +159,7 @@ public partial class AkSoundEngine
 			forward.y, forward.z, up.x, up.y, up.z);
 	}
 
-	[System.Obsolete(Deprecation_2018_1_8)]
+	[System.Obsolete(Deprecation_2019_1_1)]
 	public static uint PostEvent(uint eventId, UnityEngine.GameObject gameObject, uint flags, AkCallbackManager.EventCallback callback, object cookie, uint numSources, AkExternalSourceInfo externalSources, uint playingId)
 	{
 		if (numSources > 1)
@@ -175,7 +175,7 @@ public partial class AkSoundEngine
 		return PostEvent(eventId, gameObject, flags, callback, cookie, numSources, array, playingId);
 	}
 
-	[System.Obsolete(Deprecation_2018_1_8)]
+	[System.Obsolete(Deprecation_2019_1_1)]
 	public static uint PostEvent(uint eventId, UnityEngine.GameObject gameObject, uint flags, AkCallbackManager.EventCallback callback, object cookie, uint numSources, AkExternalSourceInfo externalSources)
 	{
 		if (numSources > 1)
@@ -189,7 +189,7 @@ public partial class AkSoundEngine
 		return PostEvent(eventId, gameObject, flags, callback, cookie, 1, array);
 	}
 
-	[System.Obsolete(Deprecation_2018_1_8)]
+	[System.Obsolete(Deprecation_2019_1_1)]
 	public static uint PostEvent(string eventName, UnityEngine.GameObject gameObject, uint flags, AkCallbackManager.EventCallback callback, object cookie, uint numSources, AkExternalSourceInfo externalSources, uint playingId)
 	{
 		if (numSources > 1)
@@ -205,7 +205,7 @@ public partial class AkSoundEngine
 		return PostEvent(eventName, gameObject, flags, callback, cookie, numSources, array, playingId);
 	}
 
-	[System.Obsolete(Deprecation_2018_1_8)]
+	[System.Obsolete(Deprecation_2019_1_1)]
 	public static uint PostEvent(string eventName, UnityEngine.GameObject gameObject, uint flags, AkCallbackManager.EventCallback callback, object cookie, uint numSources, AkExternalSourceInfo externalSources)
 	{
 		if (numSources > 1)
@@ -261,7 +261,7 @@ public partial class AkSoundEngine
 	#region Deprecation Strings
 	public const string Deprecation_2018_1_2 = "This functionality is deprecated as of Wwise v2018.1.2 and will be removed in a future release.";
 	public const string Deprecation_2018_1_6 = "This functionality is deprecated as of Wwise v2018.1.6 and will be removed in a future release.";
-	public const string Deprecation_2018_1_8 = "This functionality is deprecated as of Wwise v2018.1.8 and will be removed in a future release.";
+	public const string Deprecation_2019_1_1 = "This functionality is deprecated as of Wwise v2019.1.1 and will be removed in a future release.";
 	#endregion
 }
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
