@@ -21,13 +21,116 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3510521866" Name="DustMissed" ObjectPath="\Events\Default Work Unit\DustMissed" DurationType="OneShot" DurationMin="0.186243" DurationMax="0.280180"/>
+				<Event Id="2477368289" Name="DustPickup" ObjectPath="\Events\Default Work Unit\DustPickup" DurationType="OneShot" DurationMin="0.262718" DurationMax="0.405889"/>
+				<Event Id="4158285989" Name="GameOver" ObjectPath="\Events\Default Work Unit\GameOver" DurationType="OneShot" DurationMin="0.357075" DurationMax="0.710821"/>
+				<Event Id="1924361514" Name="ScratchMissed" ObjectPath="\Events\Default Work Unit\ScratchMissed" DurationType="OneShot" DurationMin="0.357075" DurationMax="0.710821"/>
+				<Event Id="753100617" Name="ScratchRepaired" ObjectPath="\Events\Default Work Unit\ScratchRepaired" DurationType="OneShot" DurationMin="0.679447" DurationMax="1.129057"/>
 				<Event Id="1281810935" Name="Start" ObjectPath="\Events\Default Work Unit\Start" DurationType="OneShot" DurationMin="108.898666" DurationMax="108.898666"/>
+				<Event Id="1093165245" Name="SwipeActionAir" ObjectPath="\Events\Default Work Unit\SwipeActionAir" DurationType="OneShot" DurationMin="0.571282" DurationMax="0.889479"/>
+				<Event Id="2783535130" Name="SwipeActionGround" ObjectPath="\Events\Default Work Unit\SwipeActionGround" DurationType="OneShot" DurationMin="1.066485" DurationMax="1.453083"/>
 				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Test" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="79680398" Language="SFX">
+					<ShortName>ScratchMissed03.wav</ShortName>
+					<Path>SFX\ScratchMissed03_10C4C929.wem</Path>
+				</File>
+				<File Id="80275105" Language="SFX">
+					<ShortName>DustPickup04.wav</ShortName>
+					<Path>SFX\DustPickup04_10C4C929.wem</Path>
+				</File>
+				<File Id="146144695" Language="SFX">
+					<ShortName>DustMissed04.wav</ShortName>
+					<Path>SFX\DustMissed04_10C4C929.wem</Path>
+				</File>
+				<File Id="179668533" Language="SFX">
+					<ShortName>ScratchMissed02.wav</ShortName>
+					<Path>SFX\ScratchMissed02_10C4C929.wem</Path>
+				</File>
+				<File Id="238310843" Language="SFX">
+					<ShortName>ScratchRepaired02.wav</ShortName>
+					<Path>SFX\ScratchRepaired02_10C4C929.wem</Path>
+				</File>
+				<File Id="260286480" Language="SFX">
+					<ShortName>DustMissed02.wav</ShortName>
+					<Path>SFX\DustMissed02_10C4C929.wem</Path>
+				</File>
+				<File Id="260983095" Language="SFX">
+					<ShortName>DustPickup03.wav</ShortName>
+					<Path>SFX\DustPickup03_10C4C929.wem</Path>
+				</File>
+				<File Id="341963896" Language="SFX">
+					<ShortName>SwipeActionGround01.wav</ShortName>
+					<Path>SFX\SwipeActionGround01_7519E78B.wem</Path>
+				</File>
+				<File Id="347662269" Language="SFX">
+					<ShortName>SwipeActionAir03.wav</ShortName>
+					<Path>SFX\SwipeActionAir03_10C4C929.wem</Path>
+				</File>
+				<File Id="412241125" Language="SFX">
+					<ShortName>DustPickup02.wav</ShortName>
+					<Path>SFX\DustPickup02_10C4C929.wem</Path>
+				</File>
+				<File Id="426985104" Language="SFX">
+					<ShortName>SwipeActionGround03.wav</ShortName>
+					<Path>SFX\SwipeActionGround03_7519E78B.wem</Path>
+				</File>
+				<File Id="451460627" Language="SFX">
+					<ShortName>SwipeActionAir01.wav</ShortName>
+					<Path>SFX\SwipeActionAir01_10C4C929.wem</Path>
+				</File>
+				<File Id="470535125" Language="SFX">
+					<ShortName>SwipeActionGround04.wav</ShortName>
+					<Path>SFX\SwipeActionGround04_7519E78B.wem</Path>
+				</File>
+				<File Id="550055316" Language="SFX">
+					<ShortName>ScratchMissed01.wav</ShortName>
+					<Path>SFX\ScratchMissed01_10C4C929.wem</Path>
+				</File>
+				<File Id="580137451" Language="SFX">
+					<ShortName>DustPickup01.wav</ShortName>
+					<Path>SFX\DustPickup01_10C4C929.wem</Path>
+				</File>
+				<File Id="654510971" Language="SFX">
+					<ShortName>ScratchRepaired04.wav</ShortName>
+					<Path>SFX\ScratchRepaired04_10C4C929.wem</Path>
+				</File>
+				<File Id="678552947" Language="SFX">
+					<ShortName>DustMissed05.wav</ShortName>
+					<Path>SFX\DustMissed05_10C4C929.wem</Path>
+				</File>
+				<File Id="713980487" Language="SFX">
+					<ShortName>SwipeActionAir04.wav</ShortName>
+					<Path>SFX\SwipeActionAir04_10C4C929.wem</Path>
+				</File>
+				<File Id="829266299" Language="SFX">
+					<ShortName>ScratchRepaired03.wav</ShortName>
+					<Path>SFX\ScratchRepaired03_10C4C929.wem</Path>
+				</File>
 				<File Id="882371464" Language="SFX">
 					<ShortName>VinylOST03.wav</ShortName>
 					<Path>SFX\VinylOST03_D79FB2B7.wem</Path>
+				</File>
+				<File Id="903328258" Language="SFX">
+					<ShortName>DustMissed01.wav</ShortName>
+					<Path>SFX\DustMissed01_10C4C929.wem</Path>
+				</File>
+				<File Id="941442601" Language="SFX">
+					<ShortName>SwipeActionAir02.wav</ShortName>
+					<Path>SFX\SwipeActionAir02_10C4C929.wem</Path>
+				</File>
+				<File Id="966556590" Language="SFX">
+					<ShortName>DustMissed03.wav</ShortName>
+					<Path>SFX\DustMissed03_10C4C929.wem</Path>
+				</File>
+				<File Id="1047347396" Language="SFX">
+					<ShortName>ScratchRepaired01.wav</ShortName>
+					<Path>SFX\ScratchRepaired01_10C4C929.wem</Path>
+				</File>
+				<File Id="1071237130" Language="SFX">
+					<ShortName>SwipeActionGround02.wav</ShortName>
+					<Path>SFX\SwipeActionGround02_7519E78B.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

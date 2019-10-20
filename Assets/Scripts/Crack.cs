@@ -38,19 +38,32 @@ public class Crack : MonoBehaviour
         Debug.Log("And hit ! !");
         alive = false;
         crackAnim.speed = 1;
-        StartCoroutine(disapearRoseRound());
+        StartCoroutine(disapearRoseRound(1f, true));
+        scratchRepairedEvent();
     }
 
-    IEnumerator disapearRoseRound()
+    IEnumerator disapearRoseRound(float speed, bool player)
     {
         while(sR_Circle.color.a > 0)
         {
-            sR_Circle.color -= colorToGoDown * Time.deltaTime;
+            sR_Circle.color -= colorToGoDown * Time.deltaTime * speed;
             yield return new WaitForSeconds(0.01f);
         }
 
+        if(player == true)
+            Destroy(this.gameObject);
+    }
 
-        Destroy(this.gameObject);
+    public void objectiveDeath()
+    {
+    
+        StartCoroutine(disapearRoseRound(12f, false));
+    }
+
+    private void scratchRepairedEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.ScratchRepaired.Id, this.gameObject);
+        Debug.Log("Call the event " + Sound_Manager.instance.ScratchRepaired.Id);
     }
 
 }

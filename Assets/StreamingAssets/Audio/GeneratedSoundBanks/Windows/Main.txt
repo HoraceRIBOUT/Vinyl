@@ -1,10 +1,44 @@
 Event	ID	Name			Wwise Object Path	Notes
+	753100617	ScratchRepaired			\Default Work Unit\ScratchRepaired	
+	1093165245	SwipeActionAir			\Default Work Unit\SwipeActionAir	
 	1281810935	Start			\Default Work Unit\Start	
+	1924361514	ScratchMissed			\Default Work Unit\ScratchMissed	
+	2477368289	DustPickup			\Default Work Unit\DustPickup	
+	2783535130	SwipeActionGround			\Default Work Unit\SwipeActionGround	
 	3157003241	Test			\Default Work Unit\Test	
+	3510521866	DustMissed			\Default Work Unit\DustMissed	
+	4158285989	GameOver			\Default Work Unit\GameOver	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2301693978	GameOverSlowDown			\Default Work Unit\GameOverSlowDown	
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	112375983	Wwise Sine	Wwise Sine		\Actor-Mixer Hierarchy\Default Work Unit\Test\Wwise Sine	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	79680398	ScratchMissed03	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\ScratchMissed03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ScratchMissed\ScratchMissed03		74024
+	80275105	DustPickup04	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\DustPickup04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DustPickup\DustPickup04		54812
+	146144695	DustMissed04	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\DustMissed04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DustMissed\DustMissed04		38640
+	179668533	ScratchMissed02	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\ScratchMissed02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ScratchMissed\ScratchMissed02		84176
+	238310843	ScratchRepaired02	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\ScratchRepaired02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ScratchRepaired\ScratchRepaired02		148764
+	260286480	DustMissed02	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\DustMissed02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DustMissed\DustMissed02		38640
+	260983095	DustPickup03	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\DustPickup03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DustPickup\DustPickup03		54480
+	341963896	SwipeActionGround01	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\SwipeActionGround01_7519E78B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SwipeActionGround\SwipeActionGround01		158824
+	347662269	SwipeActionAir03	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\SwipeActionAir03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SwipeActionAir\SwipeActionAir03		124876
+	412241125	DustPickup02	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\DustPickup02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DustPickup\DustPickup02		55948
+	426985104	SwipeActionGround03	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\SwipeActionGround03_7519E78B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SwipeActionGround\SwipeActionGround03		158824
+	451460627	SwipeActionAir01	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\SwipeActionAir01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SwipeActionAir\SwipeActionAir01		139328
+	470535125	SwipeActionGround04	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\SwipeActionGround04_7519E78B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SwipeActionGround\SwipeActionGround04		158824
+	550055316	ScratchMissed01	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\ScratchMissed01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ScratchMissed\ScratchMissed01		97932
+	580137451	DustPickup01	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\DustPickup01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DustPickup\DustPickup01		54812
+	654510971	ScratchRepaired04	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\ScratchRepaired04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ScratchRepaired\ScratchRepaired04		148884
+	678552947	DustMissed05	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\DustMissed05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DustMissed\DustMissed05		38640
+	713980487	SwipeActionAir04	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\SwipeActionAir04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SwipeActionAir\SwipeActionAir04		102060
+	829266299	ScratchRepaired03	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\ScratchRepaired03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ScratchRepaired\ScratchRepaired03		140796
 	882371464	VinylRythm01	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\VinylOST03_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMusic\Rythm\VinylRythm01		19209788
+	903328258	DustMissed01	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\DustMissed01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DustMissed\DustMissed01		38640
+	941442601	SwipeActionAir02	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\SwipeActionAir02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SwipeActionAir\SwipeActionAir02		117960
+	966556590	DustMissed03	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\DustMissed03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\DustMissed\DustMissed03		38640
+	1047347396	ScratchRepaired01	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\ScratchRepaired01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ScratchRepaired\ScratchRepaired01		155516
+	1071237130	SwipeActionGround02	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\SwipeActionGround02_7519E78B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SwipeActionGround\SwipeActionGround02		158824
 

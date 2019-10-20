@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playable: 1
   progression: -16
+  smoke: {fileID: 0}
 --- !u!1001 &903782197460733938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,12 +117,12 @@ PrefabInstance:
     - target: {fileID: 8474140262462330702, guid: 6b6e53d326fa6214a86a6ff61ba90268,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.43
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 8474140262462330702, guid: 6b6e53d326fa6214a86a6ff61ba90268,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.37
+      value: 1.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b6e53d326fa6214a86a6ff61ba90268, type: 3}
