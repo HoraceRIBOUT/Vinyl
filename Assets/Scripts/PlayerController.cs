@@ -58,12 +58,12 @@ public class PlayerController : MonoBehaviour
             {
                 if(!hitIn)
                     _animator.SetTrigger("JumpHit");
-                //swipeActionAirEvent();
+                swipeActionAirEvent();
             }
             else
                 if (!hitIn)
                 _animator.SetTrigger("Hit");
-                //swipeActionGroundEvent();
+                swipeActionGroundEvent();
         }
 
 
