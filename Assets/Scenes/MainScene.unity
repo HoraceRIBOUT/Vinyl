@@ -292,6 +292,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &785613042 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9028398712479683123, guid: 9653030391b02404dabbf6f4d1b2bb61,
+    type: 3}
+  m_PrefabInstance: {fileID: 1050190623409348092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &806709437
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +393,11 @@ PrefabInstance:
       propertyPath: grooveUI
       value: 
       objectReference: {fileID: 13057333}
+    - target: {fileID: 903782198080525675, guid: bc26f5217a60a8a4e8526a4c32c24f49,
+        type: 3}
+      propertyPath: animPlayer
+      value: 
+      objectReference: {fileID: 785613042}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc26f5217a60a8a4e8526a4c32c24f49, type: 3}
 --- !u!1001 &1076248392

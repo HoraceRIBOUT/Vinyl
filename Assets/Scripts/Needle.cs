@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public class Needle : MonoBehaviour
    
     public bool playable = true;
     public float groove = 0.3f;
+    public Animator animPlayer;
     
     [Header("Heighness")]
     private WorldMovement worldMove;
@@ -102,13 +103,13 @@ public class Needle : MonoBehaviour
             dust.dead = true;
             dust.GetComponentInChildren<Animator>().SetTrigger("Death");
             Invoke("Death", 2f);
-            groove -= 0.05f;
+            groove -= 1f;
 
             if(groove <= 0)
             {
                 Debug.Log("YOU DIED");
                 WorldMovement.gameover = true;
-                Destroy(player);
+                animPlayer.SetTrigger("TOMBE");
                 gameoverEvent();
             }
         }
@@ -125,7 +126,7 @@ public class Needle : MonoBehaviour
             if(groove <= 0)
             {
                 WorldMovement.gameover = true;
-                Destroy(player);
+                animPlayer.SetTrigger("TOMBE");
                 gameoverEvent();
             }
         }
@@ -133,20 +134,20 @@ public class Needle : MonoBehaviour
 
     private void dustMissedEvent()
     {
-        AkSoundEngine.PostEvent(Sound_Manager.instance.DustMissed.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.DustMissed.Id);
+        AkSoundEngine.PostEvent(Sound_Manager.instance.DustMissed.Id, Sound_Manager.instance.gameObject);
+//        Debug.Log("Call the event " + Sound_Manager.instance.DustMissed.Id);
     }
 
     private void scratchMissedEvent()
     {
-        AkSoundEngine.PostEvent(Sound_Manager.instance.ScratchMissed.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.ScratchMissed.Id);
+        AkSoundEngine.PostEvent(Sound_Manager.instance.ScratchMissed.Id, Sound_Manager.instance.gameObject);
+        //Debug.Log("Call the event " + Sound_Manager.instance.ScratchMissed.Id);
     }
 
     private void gameoverEvent()
     {
-        AkSoundEngine.PostEvent(Sound_Manager.instance.GameOver.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.GameOver.Id);
+        AkSoundEngine.PostEvent(Sound_Manager.instance.GameOver.Id, Sound_Manager.instance.gameObject);
+        //Debug.Log("Call the event " + Sound_Manager.instance.GameOver.Id);
     }
 
 }
