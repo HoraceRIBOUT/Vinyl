@@ -705,12 +705,22 @@ PrefabInstance:
     - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
         type: 3}
       propertyPath: beatDatas.Array.data[1].prefabToSpawnInHere.Array.size
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[0].prefabToSpawnInHere.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[2].prefabToSpawnInHere.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
         type: 3}
       propertyPath: beatDatas.Array.data[2].yHeightOfGround
-      value: -2.283796
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
         type: 3}
@@ -723,6 +733,42 @@ PrefabInstance:
       propertyPath: beatDatas.Array.data[1].prefabToSpawnInHere.Array.data[1]
       value: 
       objectReference: {fileID: 718578407764171344, guid: 3d734eb205f784e43bb498f8a86d9905,
+        type: 3}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[0].yHeightOfGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[1].yHeightOfGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[3].yHeightOfGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[4].yHeightOfGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[6].yHeightOfGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[5].yHeightOfGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[4].prefabToSpawnInHere.Array.data[0]
+      value: 
+      objectReference: {fileID: 8624948765199652819, guid: ff79a3a9187d2f141aa2e399bb6e680b,
         type: 3}
     - target: {fileID: 1050190622389294247, guid: 9653030391b02404dabbf6f4d1b2bb61,
         type: 3}

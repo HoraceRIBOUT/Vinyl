@@ -56,39 +56,40 @@ MonoBehaviour:
     type: 3}
   spawnPoint: {fileID: 6653141711691998729}
   beatDatas:
-  - yHeightOfGround: 0
-    prefabToSpawnInHere: []
+  - yHeightOfGround: 6
+    prefabToSpawnInHere:
+    - {fileID: 0}
     dot: {fileID: 6233721136554785985}
     timeSum: 0
     beatTiming: 0
-  - yHeightOfGround: -2.2837963
+  - yHeightOfGround: 6
     prefabToSpawnInHere: []
     dot: {fileID: 0}
     timeSum: 0
     beatTiming: 0
-  - yHeightOfGround: 0.16917467
+  - yHeightOfGround: 6
     prefabToSpawnInHere:
     - {fileID: 5269606110437656314, guid: d0d7a2c4ee86009409f10b92989669f3, type: 3}
     dot: {fileID: 0}
     timeSum: 0
     beatTiming: 0
-  - yHeightOfGround: -1.0612183
+  - yHeightOfGround: 6
     prefabToSpawnInHere: []
     dot: {fileID: 0}
     timeSum: 0
     beatTiming: 0
-  - yHeightOfGround: -1.0612183
+  - yHeightOfGround: 6
     prefabToSpawnInHere:
-    - {fileID: 6089984667174338421, guid: 3d4ea7ea723ff864e844687bc7698810, type: 3}
+    - {fileID: 8624948765199652819, guid: ff79a3a9187d2f141aa2e399bb6e680b, type: 3}
     dot: {fileID: 0}
     timeSum: 0
     beatTiming: 0
-  - yHeightOfGround: -0.88446474
+  - yHeightOfGround: 6
     prefabToSpawnInHere: []
     dot: {fileID: 0}
     timeSum: 0
     beatTiming: 0
-  - yHeightOfGround: -0.04517889
+  - yHeightOfGround: 6
     prefabToSpawnInHere: []
     dot: {fileID: 0}
     timeSum: 0
@@ -377,286 +378,6 @@ MonoBehaviour:
     timeSum: 0
     beatTiming: 0
   - yHeightOfGround: 2.1511192
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 2.1511192
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -0.23542166
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -0.23542166
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -0.9552345
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 1.587324
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.5804377
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.44149065
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.5349035
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 2.3001614
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 2.494189
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 1.4769466
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 1.4769466
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.056476
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.056476
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 2.3371668
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.7008457
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -0.11059618
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 1.289731
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 1.289731
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.474352
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.460761
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 1.5611185
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -0.54277086
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.4134169
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -1.598317
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.4388833
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.9694861
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.7890825
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.0032439232
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.0032439232
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.8913194
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.9306556
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.9617348
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -0.4504962
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -0.8436165
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 1.6868999
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 2.2743702
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -1.6247377
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.7845868
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 2.0934324
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -1.588538
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -1.588538
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 1.9959419
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 2.5375707
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 2.5375707
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.5832329
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -0.5097518
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -0.5097518
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.5753832
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.5753832
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.8782349
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.8782349
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 2.761769
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.8613695
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: 0.8613695
-    prefabToSpawnInHere: []
-    dot: {fileID: 0}
-    timeSum: 0
-    beatTiming: 0
-  - yHeightOfGround: -2.4593544
     prefabToSpawnInHere: []
     dot: {fileID: 0}
     timeSum: 0
@@ -1096,6 +817,76 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: speedOnBothAxis.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: speedOnBothAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[2].time
+      value: 0.46270752
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[2].value
+      value: -0.007528076
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[1].time
+      value: 0.25204808
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[1].value
+      value: 1.9897673
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[2].inSlope
+      value: -1.8402508
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[2].outSlope
+      value: -1.8402508
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[2].inWeight
+      value: 0.056391
+      objectReference: {fileID: 0}
+    - target: {fileID: 45352627963685058, guid: a08fb09330286114b8b7e98aa2e72325,
+        type: 3}
+      propertyPath: jumpCurve.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a08fb09330286114b8b7e98aa2e72325, type: 3}
