@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FlameMaterial
-  m_Shader: {fileID: 4800000, guid: 4f6324255e1c2b945b01bfa26ad3a3a1, type: 3}
-  m_ShaderKeywords: SHAPE_ON
+  m_Name: MyFlame
+  m_Shader: {fileID: 4800000, guid: 57b9e51e69df18147b1a862d32b30b42, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -35,12 +35,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _DistortTex:
-        m_Texture: {fileID: 2800000, guid: 3aef7b6b1c44c7849927bcf6c70848e7, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Gradient:
+        m_Texture: {fileID: 2800000, guid: 6a4d893f43cc95245bd76743970bd5de, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -52,7 +52,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: 0b595bd405f52aa4ab33f8c6a90a8dd9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8354e9263057a6c4aae54997a1a66d75, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTexture:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -63,40 +67,32 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _ShapeTex:
-        m_Texture: {fileID: 2800000, guid: 89ff54ee21c1eb749ae47c6108506688, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - SHAPE: 1
-    - SHAPEX: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Distort: 0.546
     - _DstBlend: 0
-    - _Edge: 0.81
+    - _Edge: 0.78
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Hard: 1
-    - _Height: 0.6
+    - _Hard: 9.9
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Offset: 0.26
+    - _Offset: 0.85
     - _Parallax: 0.02
-    - _ScrollX: -1.7
-    - _ScrollY: 0.6
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 20
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorA: {r: 0.14413491, g: 0.69780177, b: 0.745283, a: 1}
-    - _ColorB: {r: 0.1957547, g: 0.4754631, b: 0.5, a: 1}
+    - _Color: {r: 0.36511183, g: 0, b: 1, a: 1}
+    - _ColorOnSource: {r: 1, g: 0, b: 0.4914298, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintA: {r: 1, g: 0.6745283, b: 0.9383317, a: 1}
-    - _TintB: {r: 1, g: 0.3066038, b: 0.98582757, a: 1}
+    - _Speed: {r: 1, g: -1, b: 0, a: 0}
+    - _SwitchCol: {r: 1, g: 0.5, b: 0, a: 1}
+    - _TintA: {r: 0, g: 1, b: 0.594635, a: 1}
+    - _TintB: {r: 0, g: 1, b: 0.77932477, a: 1}

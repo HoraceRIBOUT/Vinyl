@@ -1,4 +1,4 @@
-﻿Shader "Custom/FlameEffectShader"
+﻿Shader "Custom/Fire Distort"
 {
 	Properties
 	{
@@ -77,7 +77,7 @@
 		float4 gradientBlend = lerp(float4(2,2,2,2), float4(0, 0, 0, 0), (i.uv3.y + _Height)); // gradient to fade to top
 
 		fixed4 uvdistort = tex2D(_DistortTex, i.uv3) * _Distort; // distort texture times distort amount
-		fixed4 noise = tex2D(_NoiseTex,fixed2((i.uv.x + _Time.y* _ScrollX) + uvdistort.g  ,(i.uv.y + _Time.y* _ScrollY) + uvdistort.r)); //noise texture with distortion
+		fixed4 noise = tex2D(_NoiseTex,fixed2(frac((i.uv.x + _Time.x* _ScrollX) + uvdistort.g)  ,frac((i.uv.y + _Time.x* _ScrollY) + uvdistort.r))); //noise texture with distortion
 		fixed4 shapetex = tex2D(_ShapeTex, i.uv2); // mask texture
 
 
@@ -90,14 +90,12 @@
 		noise += gradientBlend;// fade the flame at the top over mask 
 #endif
 		float4 flame = saturate(noise.a * _Hard); //noise flame
-		float4 flamecolored =flame *gradientMain; // coloured noise flame
+		float4 flamecolored = flame * gradientMain; // coloured noise flame
 		float4 flamerim = saturate((noise.a + _Edge) * _Hard) - flame; // noise flame edge
 
 		float4 flamecolored2 = flamerim * gradientTint; // coloured flame edge
 		float4 finalcolor = flamecolored + flamecolored2; // combined edge and flames
 		return finalcolor;
-
-
 	}
 		ENDCG
 	}
