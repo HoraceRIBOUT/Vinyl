@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: FlameMaterial
   m_Shader: {fileID: 4800000, guid: 4f6324255e1c2b945b01bfa26ad3a3a1, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: SHAPE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: a3ac1b810b6af87479aa173e14c93032, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0b595bd405f52aa4ab33f8c6a90a8dd9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -64,30 +64,30 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShapeTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 89ff54ee21c1eb749ae47c6108506688, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - SHAPE: 0
+    - SHAPE: 1
     - SHAPEX: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Distort: 0.286
+    - _Distort: 0.546
     - _DstBlend: 0
-    - _Edge: 0.69
+    - _Edge: 0.81
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Hard: 1
-    - _Height: 0.93
+    - _Height: 0.6
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Offset: 0
+    - _Offset: 0.26
     - _Parallax: 0.02
-    - _ScrollX: 1
-    - _ScrollY: 1
+    - _ScrollX: -1.7
+    - _ScrollY: 0.6
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
