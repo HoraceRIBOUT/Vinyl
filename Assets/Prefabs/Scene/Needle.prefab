@@ -50,6 +50,7 @@ MonoBehaviour:
   groove: 0.3
   progression: -16
   smoke: {fileID: 2650593277743645970}
+  player: {fileID: 0}
 --- !u!50 &172041338
 Rigidbody2D:
   serializedVersion: 4
@@ -113,7 +114,7 @@ Animator:
   m_GameObject: {fileID: 1478109097466353802}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8b2ee47624193941a0d86a92c63f63b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
