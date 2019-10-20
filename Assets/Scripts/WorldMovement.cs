@@ -20,6 +20,27 @@ public class WorldMovement : MonoBehaviour
     public GameObject dotGameObject;
     public Transform spawnPoint;
 
+
+    //LD
+    [System.Serializable]
+    public class BeatData
+    {
+        public float yHeightOfGround;
+
+        public List<GameObject> prefabToSpawnInHere = new List<GameObject>();
+
+        [Header("Don't touch, only info")]
+        public Transform dot;
+        public float timeSum = 0;
+        public float beatTiming = 0;
+    }
+
+    [Header("Level Design")]
+    public List<BeatData> beatDatas = new List<BeatData>();
+    public int currentSpawningIndex = 0;
+    public float timeSum = 0;
+
+
     public void Start()
     {
         GameManager.instance.player.inverseMovement = mainMovementSpeed * -1;
@@ -61,11 +82,52 @@ public class WorldMovement : MonoBehaviour
 
     void CreateNextDot()
     {
-        GameObject gO = Instantiate(dotGameObject, spawnPoint.position, spawnPoint.rotation, strateWhoMoves[0].main.transform);
+        Vector3 positionSpawn = spawnPoint.position;
+        positionSpawn.y = beatDatas[currentSpawningIndex].yHeightOfGround;
 
-        gO.transform.position = new Vector3(gO.transform.position.x, Random.Range(-3f, 3f), gO.transform.position.z);
+        GameObject gO = Instantiate(dotGameObject, positionSpawn, spawnPoint.rotation, strateWhoMoves[0].main.transform);
+        foreach(GameObject prefa in beatDatas[currentSpawningIndex].prefabToSpawnInHere)
+            Instantiate(prefa, positionSpawn, spawnPoint.rotation, gO.transform);
 
+        timeSum += GameManager.instance.beatTiming;
+        beatDatas[currentSpawningIndex].beatTiming = timeSum;
+        beatDatas[currentSpawningIndex].timeSum = GameManager.instance.beatTiming;
+
+
+        beatDatas[currentSpawningIndex].dot = gO.transform;
+
+        currentSpawningIndex++;
+        if(beatDatas.Count == currentSpawningIndex)
+        {
+            Debug.LogError("We are on the end my friend ");
+        }
+
+        //useless but still
         eachDotFromMusique.Add(gO.transform);
+    }
+
+
+
+    //For testing : 
+    [ContextMenu("Change y for random")]
+    void ChangeHeightOnIt()
+    {
+        float souvenir = 0;
+        foreach (BeatData bD in beatDatas)
+        {
+            if(souvenir == 0)
+            {
+                float rand = Random.Range(-3f, 3f);
+                bD.yHeightOfGround = rand;
+                if (Random.Range(-3f, 5f) < 0)
+                    souvenir = rand;
+            }
+            else
+            {
+                bD.yHeightOfGround = souvenir;
+                souvenir = 0;
+            }
+        }
     }
 
 }
