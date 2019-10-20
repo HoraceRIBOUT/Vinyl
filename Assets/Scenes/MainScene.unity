@@ -702,6 +702,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: WorldMovement
       objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[1].prefabToSpawnInHere.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[2].yHeightOfGround
+      value: -2.283796
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[1].prefabToSpawnInHere.Array.data[0]
+      value: 
+      objectReference: {fileID: 5269606110437656314, guid: d0d7a2c4ee86009409f10b92989669f3,
+        type: 3}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: beatDatas.Array.data[1].prefabToSpawnInHere.Array.data[1]
+      value: 
+      objectReference: {fileID: 718578407764171344, guid: 3d734eb205f784e43bb498f8a86d9905,
+        type: 3}
+    - target: {fileID: 1050190622389294247, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: playable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1050190622166163206, guid: 9653030391b02404dabbf6f4d1b2bb61,
         type: 3}
       propertyPath: m_LocalPosition.x
