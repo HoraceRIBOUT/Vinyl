@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playable: 1
   groove: 0.3
+  animPlayer: {fileID: 0}
   progression: -16
   smoke: {fileID: 2650593277743645970}
   player: {fileID: 0}
@@ -135,6 +136,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: diamant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900931224363780832, guid: 6b6e53d326fa6214a86a6ff61ba90268,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8474140263523720983, guid: 6b6e53d326fa6214a86a6ff61ba90268,
         type: 3}

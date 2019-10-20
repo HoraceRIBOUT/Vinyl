@@ -62,11 +62,13 @@ MonoBehaviour:
     timeSum: 0
     beatTiming: 0
   - yHeightOfGround: -2.2837963
-    prefabToSpawnInHere: []
+    prefabToSpawnInHere:
+    - {fileID: 5269606110437656314, guid: d0d7a2c4ee86009409f10b92989669f3, type: 3}
+    - {fileID: 718578407764171344, guid: 3d734eb205f784e43bb498f8a86d9905, type: 3}
     dot: {fileID: 0}
     timeSum: 0
     beatTiming: 0
-  - yHeightOfGround: 0.16917467
+  - yHeightOfGround: -2.283796
     prefabToSpawnInHere:
     - {fileID: 5269606110437656314, guid: d0d7a2c4ee86009409f10b92989669f3, type: 3}
     dot: {fileID: 0}
