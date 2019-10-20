@@ -14,6 +14,8 @@ public class WorldMovement : MonoBehaviour
     public List<Strate> strateWhoMoves = new List<Strate>();
     public Vector3 mainMovementSpeed = new Vector3(-1,0,0);
     public float movementSlowPerStrate = 0.5f;
+    public static bool theEnd;
+    public static bool gameover;
 
     [Header("Dot, relief")]
     public List<Transform> eachDotFromMusique;
@@ -47,6 +49,8 @@ public class WorldMovement : MonoBehaviour
 
     public void Start()
     {
+        theEnd = false;
+        gameover = false;
         GameManager.instance.player.inverseMovement = mainMovementSpeed * -1;
     }
 
@@ -55,11 +59,14 @@ public class WorldMovement : MonoBehaviour
         int index = 0;
         foreach (Strate strate in strateWhoMoves)
         {
-            Vector3 strateMovementSpeed = mainMovementSpeed * (Mathf.Pow(movementSlowPerStrate, index++));
-
-            strate.main.Translate(strateMovementSpeed * Time.deltaTime);
+            if (!theEnd)
+            {
+                Vector3 strateMovementSpeed = mainMovementSpeed * (Mathf.Pow(movementSlowPerStrate, index++));
+                strate.main.Translate(strateMovementSpeed * Time.deltaTime);
+            }
         }
         
+
     }
 
     public void OnGUI()
@@ -103,6 +110,8 @@ public class WorldMovement : MonoBehaviour
         currentSpawningIndex++;
         if(beatDatas.Count == currentSpawningIndex)
         {
+
+            theEnd = true;
             Debug.LogError("We are on the end my friend ");
         }
 
@@ -121,7 +130,7 @@ public class WorldMovement : MonoBehaviour
         float ratio = (dotB.y - dotA.y) / (dotB.x - dotA.x);
         float zValue = Mathf.Rad2Deg*Mathf.Atan(ratio);
         Quaternion rotationGr = Quaternion.Euler(0, 0, zValue);
-        Debug.Log("Ratio : " + ratio + " zVal = " + zValue + " quaternion = " + rotationGr);
+        //Debug.Log("Ratio : " + ratio + " zVal = " + zValue + " quaternion = " + rotationGr);
 
         GameObject groundObject = Instantiate(groundObj, positionGr, rotationGr, strateWhoMoves[0].main.transform);
         float magnitudeOfDifference = (dotB - dotA).magnitude;

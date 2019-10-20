@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 speedOnBothAxis = new Vector2(1, 1);
 
     public bool hitIn = false;
-    
+    private Vector3 originUp;
 
 
 
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        originUp = transform.up;
         worldMove = GameManager.instance.worldMove;
     }
 
@@ -49,23 +50,33 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         //Hit
-        hitIn = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("hit");
-
-        if (Input.GetKeyDown(KeyCode.Return))
+        hitIn = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name.Contains("hit");
+        if (Input.GetAxis("Fire1") != 0)
         {
+            print("Clip = " + _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name);
+
             if (jumpingIn)
             {
-                if(!hitIn)
+                if (!hitIn)
+                {
                     _animator.SetTrigger("JumpHit");
+                    swipeActionAirEvent();
+                }
             }
             else
+            {
                 if (!hitIn)
-                _animator.SetTrigger("Hit");
+                {
+                    _animator.SetTrigger("Hit");
+                    swipeActionGroundEvent();
+                }
+            }
+                
         }
 
 
         //Follow the ground : 
-        float y = 0;
+        float y = -1;
         if (progression > 0)//no more progression when > -2
         {
             y = ProgressionUpdate();
@@ -84,16 +95,15 @@ public class PlayerController : MonoBehaviour
 
     float ProgressionUpdate()
     {
-        /*
-        public Transform dot;
-        public float timeSum = 0;
+        
+        
+        /*public float timeSum = 0;
         public float beatTiming = 0;
         */
         ///
         WorldMovement.BeatData datA = GameManager.instance.worldMove.beatDatas[currentIndex];
         WorldMovement.BeatData datB = GameManager.instance.worldMove.beatDatas[currentIndex + 1];
-
-
+        
 
         float distanceFaite = (progression - (datA.timeSum * inverseMovement.x));
 
@@ -106,13 +116,28 @@ public class PlayerController : MonoBehaviour
 
         Vector3 posReal = Vector3.Lerp(datA.dot.transform.position, datB.dot.transform.position, lerpValue);
 
-        if(lerpValue > 1)
-        {
-           // Debug.Log("distanceAFaire = "+ distanceAFaire + " datA.timeSum : "+ datA.timeSum + " datB.beat = "+ datB.beatTiming + " ");
+            if(lerpValue > 1 && !WorldMovement.theEnd)
+            {
+
+            
+            WorldMovement.BeatData datB_ = GameManager.instance.worldMove.beatDatas[currentIndex + 2];
+            Transform dotA = datB.dot.transform;
+            Transform dotB = datB_.dot.transform;
+            // Debug.Log("distanceAFaire = "+ distanceAFaire + " datA.timeSum : "+ datA.timeSum + " datB.beat = "+ datB.beatTiming + " ");
             currentIndex++;
-            //HERE : change the target dot
-            //I think it's here where we need to change the rotation
-        }
+                //HERE : change the target dot
+                //I think it's here where we need to change the rotation
+                float h = Mathf.Sqrt(Mathf.Pow(dotB.position.x - dotA.position.x, 2) + Mathf.Pow(dotB.position.y - dotB.position.y, 2));
+                Vector3 v = dotB.position - dotA.position;
+                Vector3 normV = new Vector3(-v.y, v.x, 0) / Mathf.Sqrt(Mathf.Pow(v.x, 2) + Mathf.Pow(v.y,2)) * h;
+                if (jumpingIn == false)
+                {
+                    jumpingPart.up = normV;
+                }
+
+            }
+        if (WorldMovement.theEnd)
+            jumpingPart.up = originUp;
 
         return posReal.y;
         ///
@@ -127,6 +152,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator jumping()
     {
         //launch Jump
+        jumpingPart.up = originUp;
         _animator.SetBool("Jump", true);
         jumpingIn = true;
         float timer = 0;
@@ -173,6 +199,16 @@ public class PlayerController : MonoBehaviour
         jumpingPart.position = new Vector3(jumpingPart.position.x, 0, jumpingPart.position.z);
     }
     */
+    private void swipeActionGroundEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.SwipeActionGround.Id, this.gameObject);
+        //Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionGround.Id);
+    }
 
+    private void swipeActionAirEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.SwipeActionAir.Id, this.gameObject);
+        //Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionAir.Id);
+    }
 
 }

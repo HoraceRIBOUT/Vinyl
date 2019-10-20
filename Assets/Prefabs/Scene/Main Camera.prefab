@@ -45,7 +45,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.3584906, g: 0.24887648, b: 0.16402636, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -160,5 +160,40 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: c3e749302d935684f87e8df6855fb804,
+      type: 2}
+  DustPickup:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b99fcfb071dd2c040ba402136eb8f8c0,
+      type: 2}
+  DustMissed:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d5dbcbc3a96f2a647a6510d90a623273,
+      type: 2}
+  ScratchRepaired:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7a83ae591a5505c4c9c263f182931441,
+      type: 2}
+  ScratchMissed:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44b36c49f6a13a849a325cd438967605,
+      type: 2}
+  SwipeActionGround:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1ae567a8e85e8d2419e14c06f3da7089,
+      type: 2}
+  SwipeActionAir:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 96cb7def6537ac34ab8eeb28831203dd,
+      type: 2}
+  GameOver:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2731f56b44880fe42ad88ec38da506a0,
       type: 2}
   ani: {fileID: 0}
