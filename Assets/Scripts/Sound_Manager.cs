@@ -51,17 +51,10 @@ public class Sound_Manager : MonoBehaviour
     [ContextMenu("Beat")]
     public void Beat()
     {
-        if(ani != null)
-        {
-            float ran = Random.Range(0f, 1f);
-            foreach (SpriteRenderer sR in ani.GetComponentsInChildren<SpriteRenderer>())
-                sR.color = Color.HSVToRGB(ran, 1, 1);
-        }
-
         if(Time.timeSinceLevelLoad - lastBeatTime > 0.1f) // security to avoid two beat at the same or next frame
         {
             //calcul how long between each beat :
-            print("Beat timing : " + (Time.timeSinceLevelLoad - lastBeatTime));
+//            print("Beat timing : " + (Time.timeSinceLevelLoad - lastBeatTime));
 
 
             GameManager.instance.beatTiming = Time.timeSinceLevelLoad - lastBeatTime;
