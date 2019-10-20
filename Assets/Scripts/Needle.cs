@@ -83,7 +83,7 @@ public class Needle : MonoBehaviour
 
         if (dust != null)
         {
-            //dustMissedEvent();
+            dustMissedEvent();
             dust.dead = true;
             dust.GetComponentInChildren<Animator>().SetTrigger("Death");
             Invoke("Death", 2f);
@@ -92,7 +92,7 @@ public class Needle : MonoBehaviour
 
         if (crack != null)
         {
-            //scratchMissedEvent();
+            scratchMissedEvent();
             crack.objectiveDeath();
         }
     }

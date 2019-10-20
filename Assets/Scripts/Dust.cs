@@ -12,7 +12,7 @@ public class Dust : MonoBehaviour
         PlayerController pC = collision.gameObject.GetComponentInParent<PlayerController>();
         if (pC != null)
         {
-            //dustPickupEvent();
+            dustPickupEvent();
             dead = true;
             this.GetComponentInChildren<Animator>().SetTrigger("Death");
             Invoke("Death", 2f);

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfae8a2095d95e4584605097386762e, type: 3}
+  m_Name: DA26A5EE-4E81-44DA-A1C2-432631FAA453
+  m_EditorClassIdentifier: 
+  objectName: SwipeActionGround
+  id: 2783535130
+  guid: DA26A5EE-4E81-44DA-A1C2-432631FAA453
