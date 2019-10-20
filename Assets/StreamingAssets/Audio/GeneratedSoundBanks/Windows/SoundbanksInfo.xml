@@ -28,7 +28,7 @@
 				<Event Id="753100617" Name="ScratchRepaired" ObjectPath="\Events\Default Work Unit\ScratchRepaired" DurationType="OneShot" DurationMin="0.679447" DurationMax="1.129057"/>
 				<Event Id="1281810935" Name="Start" ObjectPath="\Events\Default Work Unit\Start" DurationType="OneShot" DurationMin="108.898666" DurationMax="108.898666"/>
 				<Event Id="1093165245" Name="SwipeActionAir" ObjectPath="\Events\Default Work Unit\SwipeActionAir" DurationType="OneShot" DurationMin="0.645441" DurationMax="0.889479"/>
-				<Event Id="2783535130" Name="SwipeActionGround" ObjectPath="\Events\Default Work Unit\SwipeActionGround" DurationType="OneShot" DurationMin="0.991958" DurationMax="1.593932"/>
+				<Event Id="2783535130" Name="SwipeActionGround" ObjectPath="\Events\Default Work Unit\SwipeActionGround" DurationType="OneShot" DurationMin="0.924746" DurationMax="1.128435"/>
 				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Test" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -94,7 +94,7 @@
 				</File>
 				<File Id="616103167" Language="SFX">
 					<ShortName>SweepActionGround04.wav</ShortName>
-					<Path>SFX\SweepActionGround04_9E2A5C8C.wem</Path>
+					<Path>SFX\SweepActionGround04_2CF3EEF6.wem</Path>
 				</File>
 				<File Id="654510971" Language="SFX">
 					<ShortName>ScratchRepaired04.wav</ShortName>
@@ -106,11 +106,11 @@
 				</File>
 				<File Id="717584030" Language="SFX">
 					<ShortName>SweepActionGround02.wav</ShortName>
-					<Path>SFX\SweepActionGround02_75EBACC8.wem</Path>
+					<Path>SFX\SweepActionGround02_F5FCD38A.wem</Path>
 				</File>
 				<File Id="751857924" Language="SFX">
 					<ShortName>SweepActionGround03.wav</ShortName>
-					<Path>SFX\SweepActionGround03_9F09EF84.wem</Path>
+					<Path>SFX\SweepActionGround03_F5C5E4AE.wem</Path>
 				</File>
 				<File Id="829266299" Language="SFX">
 					<ShortName>ScratchRepaired03.wav</ShortName>
@@ -146,7 +146,7 @@
 				</File>
 				<File Id="1071113021" Language="SFX">
 					<ShortName>SweepActionGround01.wav</ShortName>
-					<Path>SFX\SweepActionGround01_7BAFB643.wem</Path>
+					<Path>SFX\SweepActionGround01_A09E3763.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
