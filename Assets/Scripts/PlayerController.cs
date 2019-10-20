@@ -58,10 +58,12 @@ public class PlayerController : MonoBehaviour
             {
                 if(!hitIn)
                     _animator.SetTrigger("JumpHit");
+                //swipeActionAirEvent();
             }
             else
                 if (!hitIn)
                 _animator.SetTrigger("Hit");
+                //swipeActionGroundEvent();
         }
 
 
@@ -185,6 +187,16 @@ public class PlayerController : MonoBehaviour
         jumpingPart.position = new Vector3(jumpingPart.position.x, 0, jumpingPart.position.z);
     }
     */
+    private void swipeActionGroundEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.SwipeActionGround.Id, this.gameObject);
+        Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionGround.Id);
+    }
 
+    private void swipeActionAirEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.SwipeActionAir.Id, this.gameObject);
+        Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionAir.Id);
+    }
 
 }
