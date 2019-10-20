@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 speedOnBothAxis = new Vector2(1, 1);
 
     public bool hitIn = false;
-    
+    private Vector3 originUp;
 
 
 
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        originUp = transform.up;
         worldMove = GameManager.instance.worldMove;
     }
 
@@ -117,8 +118,10 @@ public class PlayerController : MonoBehaviour
             float h = Mathf.Sqrt(Mathf.Pow(dotB.position.x - dotA.position.x, 2) + Mathf.Pow(dotB.position.y - dotB.position.y, 2));
             Vector3 v = dotB.position - dotA.position;
             Vector3 normV = new Vector3(-v.y, v.x, 0) / Mathf.Sqrt(Mathf.Pow(v.x, 2) + Mathf.Pow(v.y,2)) * h;
-            jumpingPart.up = normV;
-
+            if (jumpingIn == false)
+            {
+                jumpingPart.up = normV;
+            }
 
         }
 
@@ -135,6 +138,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator jumping()
     {
         //launch Jump
+        jumpingPart.up = originUp;
         _animator.SetBool("Jump", true);
         jumpingIn = true;
         float timer = 0;
