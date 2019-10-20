@@ -69,8 +69,9 @@ public class Needle : MonoBehaviour
             }
 
             y = posReal.y;
+            if(groove < 1)
+            groove += Time.deltaTime * 0.01f;
 
-            groove += Time.deltaTime * 0.1f;
         }
                
                
@@ -103,7 +104,7 @@ public class Needle : MonoBehaviour
             dust.dead = true;
             dust.GetComponentInChildren<Animator>().SetTrigger("Death");
             Invoke("Death", 2f);
-            groove -= 1f;
+            groove -= 0.05f;
 
             if(groove <= 0)
             {
