@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,7 +36,7 @@ public class Needle : MonoBehaviour
             return;
 
         //Follow the ground : 
-        float y = 0;
+        float y = -1;
         if (progression > 0)//no more progression when > -2
         {
             WorldMovement.BeatData datA = GameManager.instance.worldMove.beatDatas[currentIndex];
