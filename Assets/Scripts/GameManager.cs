@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public WorldMovement worldMove;
     public PlayerController player;
 
+    public float beatTiming = 0.45f;
+
     public void Awake()
     {
 #if !UNITY_EDITOR

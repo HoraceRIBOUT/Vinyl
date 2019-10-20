@@ -17,6 +17,9 @@ public class Sound_Manager : MonoBehaviour
     public AK.Wwise.Event testEvent;
     public AK.Wwise.Event startEvent;
 
+    //BEAT
+    float lastBeatTime = 0;
+
 
     [Header("A little surprise")]
     public Animator ani;
@@ -55,7 +58,19 @@ public class Sound_Manager : MonoBehaviour
                 sR.color = Color.HSVToRGB(ran, 1, 1);
         }
 
-        GameManager.instance.worldMove.Beat();
+        if(Time.timeSinceLevelLoad - lastBeatTime > 0.1f) // security to avoid two beat at the same or next frame
+        {
+            //calcul how long between each beat :
+            print("Beat timing : " + (Time.timeSinceLevelLoad - lastBeatTime));
+
+
+            GameManager.instance.beatTiming = Time.timeSinceLevelLoad - lastBeatTime;
+            lastBeatTime = Time.timeSinceLevelLoad;
+
+            GameManager.instance.worldMove.Beat();
+        }
+        
+
     }
 
     [ContextMenu("Bar")]
@@ -65,13 +80,10 @@ public class Sound_Manager : MonoBehaviour
     }
 
 
-    private void Update()
+    private void TestEvent()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
             AkSoundEngine.PostEvent(testEvent.Id, this.gameObject);
             Debug.Log("Call the event " + testEvent.Id);
-        }
     }
 
 

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Heighness")]
     private WorldMovement worldMove;
     public float progression = -11;
+    public int currentIndex = 0;
 
     [Header("Jump part")]
     public string jumpAxis = "Jump";
@@ -65,33 +66,56 @@ public class PlayerController : MonoBehaviour
 
         //Follow the ground : 
         float y = 0;
-        if (progression > -2)
+        if (progression > 0)//no more progression when > -2
         {
-            float realPos = progression / 2f;
-            int dotIndex = (int)realPos;
-            float lerpValue = realPos - (float)dotIndex;
-
-            Vector3 posA = Vector3.zero;
-            if (progression > 0)
-                posA = worldMove.eachDotFromMusique[dotIndex].transform.position;
-            else
-            {
-                lerpValue = 1 + lerpValue;
-                dotIndex = -1;
-            }
-            Vector3 posB = worldMove.eachDotFromMusique[dotIndex + 1].transform.position;
-
-            Vector3 posReal = Vector3.Lerp(posA, posB, lerpValue);
-            y = posReal.y;
+            y = ProgressionUpdate();
         }
 
         movementForThisFrame.y = (this.transform.position.y * -1) + y;
         
         this.transform.Translate(movementForThisFrame);
-
-        progression += Time.deltaTime;
+        
+        progression += Time.deltaTime * (inverseMovement.x);
     }
-    
+
+    public float debugVaLl = 1f;
+    public float seeOtherValue = 0;
+    public AnimationCurve followTheCurveharry;
+
+    float ProgressionUpdate()
+    {
+        /*
+        public Transform dot;
+        public float timeSum = 0;
+        public float beatTiming = 0;
+        */
+        ///
+        WorldMovement.BeatData datA = GameManager.instance.worldMove.beatDatas[currentIndex];
+        WorldMovement.BeatData datB = GameManager.instance.worldMove.beatDatas[currentIndex + 1];
+
+
+
+        float distanceFaite = (progression - (datA.timeSum * inverseMovement.x));
+
+        float distanceAFaire = datB.beatTiming * inverseMovement.x;
+
+        float lerpValue = distanceFaite / distanceAFaire;
+
+        seeOtherValue = lerpValue;
+        followTheCurveharry.AddKey(Time.timeSinceLevelLoad - 5, lerpValue);
+
+        Vector3 posReal = Vector3.Lerp(datA.dot.transform.position, datB.dot.transform.position, lerpValue);
+
+        if(lerpValue > 1)
+        {
+           // Debug.Log("distanceAFaire = "+ distanceAFaire + " datA.timeSum : "+ datA.timeSum + " datB.beat = "+ datB.beatTiming + " ");
+            currentIndex++;
+        }
+
+        return posReal.y;
+        ///
+    }
+
     void Jump()
     {
         Debug.Log("Jump");
