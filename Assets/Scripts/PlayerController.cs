@@ -50,9 +50,9 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         //Hit
+        hitIn = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name.Contains("hit");
         if (Input.GetAxis("Fire1") != 0)
         {
-            hitIn = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name.Contains("hit");
             print("Clip = " + _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name);
 
             if (jumpingIn)

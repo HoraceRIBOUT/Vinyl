@@ -70,8 +70,9 @@ public class Needle : MonoBehaviour
             }
 
             y = posReal.y;
+            if(groove < 1)
+            groove += Time.deltaTime * 0.01f;
 
-            groove += Time.deltaTime * 0.1f;
         }
                
                
