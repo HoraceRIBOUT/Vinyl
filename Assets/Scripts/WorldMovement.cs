@@ -37,7 +37,7 @@ public class WorldMovement : MonoBehaviour
 
     [Header("Level Design")]
     public List<BeatData> beatDatas = new List<BeatData>();
-    public int currentSpawningIndex = 0;
+    public int currentSpawningIndex = 1;
     public float timeSum = 0;
 
 
@@ -90,8 +90,8 @@ public class WorldMovement : MonoBehaviour
             Instantiate(prefa, positionSpawn, spawnPoint.rotation, gO.transform);
 
         timeSum += GameManager.instance.beatTiming;
-        beatDatas[currentSpawningIndex].beatTiming = timeSum;
-        beatDatas[currentSpawningIndex].timeSum = GameManager.instance.beatTiming;
+        beatDatas[currentSpawningIndex].beatTiming = GameManager.instance.beatTiming;
+        beatDatas[currentSpawningIndex].timeSum = timeSum;
 
 
         beatDatas[currentSpawningIndex].dot = gO.transform;
@@ -108,6 +108,8 @@ public class WorldMovement : MonoBehaviour
 
 
 
+
+    ////////////////////
     //For testing : 
     [ContextMenu("Change y for random")]
     void ChangeHeightOnIt()

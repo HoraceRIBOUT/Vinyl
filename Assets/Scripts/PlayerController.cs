@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Heighness")]
     private WorldMovement worldMove;
     public float progression = -11;
+    public int currentIndex = 0;
 
     [Header("Jump part")]
     public string jumpAxis = "Jump";
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
         //Follow the ground : 
         float y = 0;
-        if (progression > -2)
+        if (progression > 0)//no more progression when > -2
         {
             y = ProgressionUpdate();
         }
@@ -79,58 +80,41 @@ public class PlayerController : MonoBehaviour
 
     public float debugVaLl = 1f;
     public float seeOtherValue = 0;
+    public AnimationCurve followTheCurveharry;
 
     float ProgressionUpdate()
     {
-        float distanceAssumee = inverseMovement.x * GameManager.instance.beatTiming;//replace by the beat of that point and reset the progression
-        float realPos = progression * (1f / (distanceAssumee));
-        int dotIndex = (int)realPos;
-
-        //Debug.Log("DotIndex : " + dotIndex);
-
-        float lerpValue = realPos - (float)dotIndex;
-
-        seeOtherValue = lerpValue;
-
-        Vector3 posA = Vector3.zero;
-        if (progression > 0)
-            posA = worldMove.eachDotFromMusique[dotIndex].transform.position;
-        else
-        {
-            lerpValue = 1 + lerpValue;
-            dotIndex = -1;
-        }
-        Vector3 posB = worldMove.eachDotFromMusique[dotIndex + 1].transform.position;
-
-        Vector3 posReal = Vector3.Lerp(posA, posB, lerpValue);
-        return posReal.y;
-
         /*
-        float realPos = progression * (1f/ (distanceAssumee));//GameManager.instance.beatTiming * 0.5f; // distance made between each. If -1 speed set the 2f , then...
+        public Transform dot;
+        public float timeSum = 0;
+        public float beatTiming = 0;
+        */
+        ///
+        WorldMovement.BeatData datA = GameManager.instance.worldMove.beatDatas[currentIndex];
+        WorldMovement.BeatData datB = GameManager.instance.worldMove.beatDatas[currentIndex + 1];
 
-        if ((int)realPos != 1){
-            currentdotIndex++;
-            progression = 0.001f;
-        }
 
-        //Debug.Log("DotIndex : " + dotIndex);
 
-        float lerpValue = realPos;
+        float distanceFaite = (progression - (datA.timeSum * inverseMovement.x));
+
+        float distanceAFaire = datB.beatTiming * inverseMovement.x;
+
+
+        float lerpValue = distanceFaite / distanceAFaire;
 
         seeOtherValue = lerpValue;
+        followTheCurveharry.AddKey(Time.timeSinceLevelLoad - 5, lerpValue);
 
-        Vector3 posA = Vector3.zero;
-        if (progression > 0)
-            posA = worldMove.eachDotFromMusique[currentdotIndex].transform.position;
-        else
+        Vector3 posReal = Vector3.Lerp(datA.dot.transform.position, datB.dot.transform.position, lerpValue);
+
+        if(lerpValue > 1)
         {
-            lerpValue = 1 + lerpValue;
-            currentdotIndex = -1;
+           // Debug.Log("distanceAFaire = "+ distanceAFaire + " datA.timeSum : "+ datA.timeSum + " datB.beat = "+ datB.beatTiming + " ");
+            currentIndex++;
         }
-        Vector3 posB = worldMove.eachDotFromMusique[currentdotIndex + 1].transform.position;
 
-        Vector3 posReal = Vector3.Lerp(posA, posB, lerpValue);
-        return posReal.y;*/
+        return posReal.y;
+        ///
     }
 
     void Jump()
