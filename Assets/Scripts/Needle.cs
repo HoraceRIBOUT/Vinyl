@@ -6,10 +6,12 @@ public class Needle : MonoBehaviour
 {
    
     public bool playable = true;
+    public float groove = 0.3f;
     
     [Header("Heighness")]
     private WorldMovement worldMove;
     public float progression = -22;
+    public Transform smoke;
 
 
     private int currentIndex = 0;
@@ -25,6 +27,7 @@ public class Needle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!playable)
             return;
 
@@ -35,7 +38,10 @@ public class Needle : MonoBehaviour
             WorldMovement.BeatData datA = GameManager.instance.worldMove.beatDatas[currentIndex];
             WorldMovement.BeatData datB = GameManager.instance.worldMove.beatDatas[currentIndex + 1];
 
-
+            WorldMovement.BeatData datA_ = GameManager.instance.worldMove.beatDatas[currentIndex + 1];
+            WorldMovement.BeatData datB_ = GameManager.instance.worldMove.beatDatas[currentIndex + 2];
+            Transform dotA = datA_.dot.transform;
+            Transform dotB = datB_.dot.transform;
 
             float distanceFaite = (progression - (datA.timeSum * inverseMovement.x));
             float distanceAFaire = datB.beatTiming * inverseMovement.x;
@@ -49,10 +55,17 @@ public class Needle : MonoBehaviour
             {
                 currentIndex++;
                 //HERE : change the target dot
-                //I think it's here where we need to change the rotation
+                float h = Mathf.Sqrt(Mathf.Pow(dotB.position.x - dotA.position.x, 2) + Mathf.Pow(dotB.position.y - dotB.position.y, 2));
+                Vector3 v = dotB.position - dotA.position;
+                Vector3 normV = new Vector3(-v.y, v.x, 0) / Mathf.Sqrt(Mathf.Pow(v.x, 2) + Mathf.Pow(v.y, 2)) * h;
+                smoke.up = normV;
+
+
             }
 
             y = posReal.y;
+
+            groove++;
         }
                
                
@@ -63,4 +76,36 @@ public class Needle : MonoBehaviour
         progression += Time.deltaTime * (inverseMovement.x);
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    { 
+        Dust dust = collision.gameObject.GetComponentInParent<Dust>();
+        Crack crack = collision.gameObject.GetComponentInParent<Crack>();
+
+        if (dust != null)
+        {
+            //dustMissedEvent();
+            dust.dead = true;
+            dust.GetComponentInChildren<Animator>().SetTrigger("Death");
+            Invoke("Death", 2f);
+
+        }
+
+        if (crack != null)
+        {
+            //scratchMissedEvent();
+            crack.objectiveDeath();
+        }
+    }
+
+    private void dustMissedEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.DustMissed.Id, this.gameObject);
+        Debug.Log("Call the event " + Sound_Manager.instance.DustMissed.Id);
+    }
+
+    private void scratchMissedEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.ScratchMissed.Id, this.gameObject);
+        Debug.Log("Call the event " + Sound_Manager.instance.ScratchMissed.Id);
+    }
 }

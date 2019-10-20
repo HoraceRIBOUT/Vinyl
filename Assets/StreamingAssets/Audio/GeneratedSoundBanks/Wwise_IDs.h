@@ -13,9 +13,21 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID DUSTMISSED = 3510521866U;
+        static const AkUniqueID DUSTPICKUP = 2477368289U;
+        static const AkUniqueID GAMEOVER = 4158285989U;
+        static const AkUniqueID SCRATCHMISSED = 1924361514U;
+        static const AkUniqueID SCRATCHREPAIRED = 753100617U;
         static const AkUniqueID START = 1281810935U;
+        static const AkUniqueID SWIPEACTIONAIR = 1093165245U;
+        static const AkUniqueID SWIPEACTIONGROUND = 2783535130U;
         static const AkUniqueID TEST = 3157003241U;
     } // namespace EVENTS
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID GAMEOVERSLOWDOWN = 2301693978U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
