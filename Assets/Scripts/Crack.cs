@@ -56,7 +56,6 @@ public class Crack : MonoBehaviour
 
     public void objectiveDeath()
     {
-    
         StartCoroutine(disapearRoseRound(12f, false));
     }
 

@@ -13,6 +13,7 @@ public class Needle : MonoBehaviour
     public float progression = -22;
     public Transform smoke;
 
+    public PlayerController player;
 
     private int currentIndex = 0;
     private Vector3 inverseMovement;
@@ -83,19 +84,38 @@ public class Needle : MonoBehaviour
 
         if (dust != null)
         {
+
+            if (dust.dead)
+                return;
             dustMissedEvent();
             dust.dead = true;
             dust.GetComponentInChildren<Animator>().SetTrigger("Death");
             Invoke("Death", 2f);
-            groove -= 0.05f;
+            groove -= 100f;
 
+            if(groove < 0)
+            {
+                WorldMovement.gameover = true;
+                Destroy(player);
+                //gameoverEvent();
+            }
         }
 
         if (crack != null)
         {
+
+            if (!crack.alive)
+                return; 
             scratchMissedEvent();
             crack.objectiveDeath();
             groove -= 0.2f;
+
+            if(groove < 0)
+            {
+                WorldMovement.gameover = true;
+                Destroy(player);
+                //gameoverEvent();
+            }
         }
     }
 
@@ -110,4 +130,11 @@ public class Needle : MonoBehaviour
         AkSoundEngine.PostEvent(Sound_Manager.instance.ScratchMissed.Id, this.gameObject);
         Debug.Log("Call the event " + Sound_Manager.instance.ScratchMissed.Id);
     }
+
+    private void gameoverEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.GameOver.Id, this.gameObject);
+        Debug.Log("Call the event " + Sound_Manager.instance.GameOver.Id);
+    }
+
 }
