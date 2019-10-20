@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         //Hit
         hitIn = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("hit");
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetAxis("Fire1") != 0)
         {
             if (jumpingIn)
             {
