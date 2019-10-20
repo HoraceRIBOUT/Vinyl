@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Follow the ground : 
-        float y = 0;
+        float y = -1;
         if (progression > 0)//no more progression when > -2
         {
             y = ProgressionUpdate();

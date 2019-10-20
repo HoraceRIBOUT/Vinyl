@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 31242bbb048d1e439b52a1555c553df2
     GuidInternal: 
-    m_lastTime: -8586301111333291947
+    m_lastTime: -8586301111314775808
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ecd0bc4cb4be8d43af43ffd4fa3ab549
     GuidInternal: 
-    m_lastTime: -8586301111332983048
+    m_lastTime: -8586301111314775808
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: f3cb43df8a6cea4bbd0739f1df0c7821
     GuidInternal: 
-    m_lastTime: -8586300159333478936
+    m_lastTime: -8586300159314775808
     List:
     - name: Main
       guid: 2bc71775a4ba0241b1fb82bd4dbe36c7
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 14d54fc18c8e8440bc15d94ee4049a81
     GuidInternal: 
-    m_lastTime: -8586300137665828033
+    m_lastTime: -8586300026304879391
     List:
     - name: DustMissed
       guid: 489e3f4b0347d4419fe747013938980a
@@ -59,8 +59,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\DustMissed
       maxAttenuation: 0
-      maxDuration: 0.28018
-      minDuration: 0.186243
+      maxDuration: -1
+      minDuration: -1
     - name: DustPickup
       guid: bfafc18f266f1f42ad5cb56ad523a403
       id: 2477368289
@@ -71,8 +71,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\DustPickup
       maxAttenuation: 0
-      maxDuration: 0.405889
-      minDuration: 0.262718
+      maxDuration: -1
+      minDuration: -1
     - name: GameOver
       guid: ec49e7c95ef88545b98d707feb88c554
       id: 4158285989
@@ -83,8 +83,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GameOver
       maxAttenuation: 0
-      maxDuration: 0.710821
-      minDuration: 0.357075
+      maxDuration: -1
+      minDuration: -1
     - name: ScratchMissed
       guid: 9d137632a7f7ea46870509f9c3c7c7ed
       id: 1924361514
@@ -95,8 +95,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\ScratchMissed
       maxAttenuation: 0
-      maxDuration: 0.710821
-      minDuration: 0.357075
+      maxDuration: -1
+      minDuration: -1
     - name: ScratchRepaired
       guid: 3fdb57ad837fe54c9c4a3fbd4bbcc8a9
       id: 753100617
@@ -107,8 +107,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\ScratchRepaired
       maxAttenuation: 0
-      maxDuration: 1.129057
-      minDuration: 0.679447
+      maxDuration: -1
+      minDuration: -1
     - name: Start
       guid: 9d4fd1071cf33145ade32c8c355796e9
       id: 1281810935
@@ -119,8 +119,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Start
       maxAttenuation: 0
-      maxDuration: 108.89867
-      minDuration: 108.89867
+      maxDuration: -1
+      minDuration: -1
     - name: SwipeActionAir
       guid: 60b68d51ad7aa241872a1bcb68d66894
       id: 1093165245
@@ -131,8 +131,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SwipeActionAir
       maxAttenuation: 0
-      maxDuration: 0.889479
-      minDuration: 0.571282
+      maxDuration: -1
+      minDuration: -1
     - name: SwipeActionGround
       guid: eea526da814eda44a1c2432631faa453
       id: 2783535130
@@ -143,8 +143,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SwipeActionGround
       maxAttenuation: 0
-      maxDuration: 1.453083
-      minDuration: 1.066485
+      maxDuration: -1
+      minDuration: -1
     - name: Test
       guid: 62009ca15e10ff408f08fb0e2124026a
       id: 3157003241
@@ -155,14 +155,14 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Test
       maxAttenuation: 0
-      maxDuration: 1
-      minDuration: 1
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 20470d032cb1eb4e8fca1639c76b7f4c
     GuidInternal: 
-    m_lastTime: -8586300171060221671
+    m_lastTime: -8586300171054775808
     List:
     - name: GameOverSlowDown
       guid: 95368b726fbc0f478df24365a6c56728
@@ -178,21 +178,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: bc661f9c6fd0014187805fce4c0e2797
     GuidInternal: 
-    m_lastTime: -8586301111333032635
+    m_lastTime: -8586301111314775808
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: dcbc889dbec99741abd351c387a851ab
     GuidInternal: 
-    m_lastTime: -8586301111333072534
+    m_lastTime: -8586301111314775808
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 4a12a08d6b996d4aa64320df83b58a92
     GuidInternal: 
-    m_lastTime: -8586301111333341795
+    m_lastTime: -8586301111314775808
     List: []
   ExpandedItems:
   - /Vinyl_WwiseProject

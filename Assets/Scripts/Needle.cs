@@ -7,6 +7,7 @@ public class Needle : MonoBehaviour
    
     public bool playable = true;
     public float groove = 0.3f;
+    public Animator animPlayer;
     
     [Header("Heighness")]
     private WorldMovement worldMove;
@@ -17,6 +18,9 @@ public class Needle : MonoBehaviour
 
     private int currentIndex = 0;
     private Vector3 inverseMovement;
+
+
+    public UnityEngine.UI.Slider grooveUI;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +37,7 @@ public class Needle : MonoBehaviour
             return;
 
         //Follow the ground : 
-        float y = 0;
+        float y = -1;
         if (progression > 0)//no more progression when > -2
         {
             WorldMovement.BeatData datA = GameManager.instance.worldMove.beatDatas[currentIndex];
@@ -66,7 +70,7 @@ public class Needle : MonoBehaviour
 
             y = posReal.y;
 
-            groove++;
+            groove += Time.deltaTime * 0.1f;
         }
                
                
@@ -75,13 +79,21 @@ public class Needle : MonoBehaviour
         this.transform.Translate(movement);
 
         progression += Time.deltaTime * (inverseMovement.x);
+
+
+        grooveUI.value = groove;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     { 
         Dust dust = collision.gameObject.GetComponentInParent<Dust>();
         Crack crack = collision.gameObject.GetComponentInParent<Crack>();
+        PlayerController p = collision.gameObject.GetComponentInParent<PlayerController>();
 
+        if (p != null)
+        {
+            p.enabled = false;
+        }
         if (dust != null)
         {
 
@@ -91,13 +103,14 @@ public class Needle : MonoBehaviour
             dust.dead = true;
             dust.GetComponentInChildren<Animator>().SetTrigger("Death");
             Invoke("Death", 2f);
-            groove -= 100f;
+            groove -= 1f;
 
-            if(groove < 0)
+            if(groove <= 0)
             {
+                Debug.Log("YOU DIED");
                 WorldMovement.gameover = true;
-                Destroy(player);
-                //gameoverEvent();
+                animPlayer.SetTrigger("TOMBE");
+                gameoverEvent();
             }
         }
 
@@ -110,31 +123,31 @@ public class Needle : MonoBehaviour
             crack.objectiveDeath();
             groove -= 0.2f;
 
-            if(groove < 0)
+            if(groove <= 0)
             {
                 WorldMovement.gameover = true;
-                Destroy(player);
-                //gameoverEvent();
+                animPlayer.SetTrigger("TOMBE");
+                gameoverEvent();
             }
         }
     }
 
     private void dustMissedEvent()
     {
-        AkSoundEngine.PostEvent(Sound_Manager.instance.DustMissed.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.DustMissed.Id);
+        AkSoundEngine.PostEvent(Sound_Manager.instance.DustMissed.Id, Sound_Manager.instance.gameObject);
+//        Debug.Log("Call the event " + Sound_Manager.instance.DustMissed.Id);
     }
 
     private void scratchMissedEvent()
     {
-        AkSoundEngine.PostEvent(Sound_Manager.instance.ScratchMissed.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.ScratchMissed.Id);
+        AkSoundEngine.PostEvent(Sound_Manager.instance.ScratchMissed.Id, Sound_Manager.instance.gameObject);
+        //Debug.Log("Call the event " + Sound_Manager.instance.ScratchMissed.Id);
     }
 
     private void gameoverEvent()
     {
-        AkSoundEngine.PostEvent(Sound_Manager.instance.GameOver.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.GameOver.Id);
+        AkSoundEngine.PostEvent(Sound_Manager.instance.GameOver.Id, Sound_Manager.instance.gameObject);
+        //Debug.Log("Call the event " + Sound_Manager.instance.GameOver.Id);
     }
 
 }
