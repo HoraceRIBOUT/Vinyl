@@ -615,48 +615,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8958141250097388355, guid: 26e34e48c40127f41a718a73c6c55cf3,
-        type: 3}
-      propertyPath: DustPickup.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: b99fcfb071dd2c040ba402136eb8f8c0,
-        type: 2}
-    - target: {fileID: 8958141250097388355, guid: 26e34e48c40127f41a718a73c6c55cf3,
-        type: 3}
-      propertyPath: DustMissed.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: d5dbcbc3a96f2a647a6510d90a623273,
-        type: 2}
-    - target: {fileID: 8958141250097388355, guid: 26e34e48c40127f41a718a73c6c55cf3,
-        type: 3}
-      propertyPath: ScratchRepaired.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 7a83ae591a5505c4c9c263f182931441,
-        type: 2}
-    - target: {fileID: 8958141250097388355, guid: 26e34e48c40127f41a718a73c6c55cf3,
-        type: 3}
-      propertyPath: ScratchMissed.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 44b36c49f6a13a849a325cd438967605,
-        type: 2}
-    - target: {fileID: 8958141250097388355, guid: 26e34e48c40127f41a718a73c6c55cf3,
-        type: 3}
-      propertyPath: SwipeActionGround.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 1ae567a8e85e8d2419e14c06f3da7089,
-        type: 2}
-    - target: {fileID: 8958141250097388355, guid: 26e34e48c40127f41a718a73c6c55cf3,
-        type: 3}
-      propertyPath: SwipeActionAir.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 96cb7def6537ac34ab8eeb28831203dd,
-        type: 2}
-    - target: {fileID: 8958141250097388355, guid: 26e34e48c40127f41a718a73c6c55cf3,
-        type: 3}
-      propertyPath: GameOver.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 2731f56b44880fe42ad88ec38da506a0,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e34e48c40127f41a718a73c6c55cf3, type: 3}
 --- !u!1 &1355632869
@@ -781,6 +739,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1883570767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8958141250097388354, guid: 26e34e48c40127f41a718a73c6c55cf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1304021749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1883570768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883570767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: c75937c87bb81b444b6144383b34c8a9, type: 2}
 --- !u!1 &2024904019
 GameObject:
   m_ObjectHideFlags: 0
