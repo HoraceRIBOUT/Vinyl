@@ -47,8 +47,68 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 14d54fc18c8e8440bc15d94ee4049a81
     GuidInternal: 
-    m_lastTime: -8586301026988412189
+    m_lastTime: -8586300239539479452
     List:
+    - name: DustMissed
+      guid: 489e3f4b0347d4419fe747013938980a
+      id: 3510521866
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: DustMissed
+        ObjectType: 3
+      Path: Default Work Unit\DustMissed
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: DustPickup
+      guid: bfafc18f266f1f42ad5cb56ad523a403
+      id: 2477368289
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: DustPickup
+        ObjectType: 3
+      Path: Default Work Unit\DustPickup
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GameOver
+      guid: 4133f802b3dc2643bf997de8dcf2f6cc
+      id: 4158285989
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GameOver
+        ObjectType: 3
+      Path: Default Work Unit\GameOver
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ScratchMissed
+      guid: 9d137632a7f7ea46870509f9c3c7c7ed
+      id: 1924361514
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ScratchMissed
+        ObjectType: 3
+      Path: Default Work Unit\ScratchMissed
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ScratchRepaired
+      guid: 3fdb57ad837fe54c9c4a3fbd4bbcc8a9
+      id: 753100617
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ScratchRepaired
+        ObjectType: 3
+      Path: Default Work Unit\ScratchRepaired
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Start
       guid: 9d4fd1071cf33145ade32c8c355796e9
       id: 1281810935
@@ -59,8 +119,20 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Start
       maxAttenuation: 0
-      maxDuration: 106.153854
-      minDuration: 106.153854
+      maxDuration: -1
+      minDuration: -1
+    - name: SwipeAction
+      guid: eea526da814eda44a1c2432631faa453
+      id: 3465150743
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SwipeAction
+        ObjectType: 3
+      Path: Default Work Unit\SwipeAction
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Test
       guid: 62009ca15e10ff408f08fb0e2124026a
       id: 3157003241
