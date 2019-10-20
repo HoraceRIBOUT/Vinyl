@@ -21,13 +21,13 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1281810935" Name="Start" ObjectPath="\Events\Default Work Unit\Start" DurationType="OneShot" DurationMin="106.153854" DurationMax="106.153854"/>
+				<Event Id="1281810935" Name="Start" ObjectPath="\Events\Default Work Unit\Start" DurationType="OneShot" DurationMin="108.898666" DurationMax="108.898666"/>
 				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Test" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="660741189" Language="SFX">
-					<ShortName>VinylOST02.wav</ShortName>
-					<Path>SFX\VinylOST02_D79FB2B7.wem</Path>
+				<File Id="882371464" Language="SFX">
+					<ShortName>VinylOST03.wav</ShortName>
+					<Path>SFX\VinylOST03_D79FB2B7.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
