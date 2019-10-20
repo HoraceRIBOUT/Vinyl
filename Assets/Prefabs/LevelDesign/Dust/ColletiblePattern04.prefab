@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 718578407764171345}
   m_Layer: 0
-  m_Name: ColletiblePattern03
+  m_Name: ColletiblePattern04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,12 +274,12 @@ PrefabInstance:
     - target: {fileID: 8175138825748844393, guid: a1ebe6683b34a90439a85622746a44ca,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.015
+      value: 3.649
       objectReference: {fileID: 0}
     - target: {fileID: 8175138825748844393, guid: a1ebe6683b34a90439a85622746a44ca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.031
+      value: -0.146
       objectReference: {fileID: 0}
     - target: {fileID: 8175138825748844393, guid: a1ebe6683b34a90439a85622746a44ca,
         type: 3}
