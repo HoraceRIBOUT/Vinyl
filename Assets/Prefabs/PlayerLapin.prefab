@@ -51,6 +51,7 @@ MonoBehaviour:
   currentIndex: 0
   jumpAxis: Jump
   jumpingPart: {fileID: 45352628308047220}
+  jumpingIn: 0
   jumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -85,7 +86,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   speedOnBothAxis: {x: 4, y: 2}
-  jumpingIn: 0
+  hitIn: 0
   debugVaLl: 2
   seeOtherValue: 0
   followTheCurveharry:
@@ -244,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 5805248507661704511, guid: 09178ce5df6d3374ab9fc6b7dd133ce5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.27
+      value: 2.24
       objectReference: {fileID: 0}
     - target: {fileID: 5805248507661704511, guid: 09178ce5df6d3374ab9fc6b7dd133ce5,
         type: 3}

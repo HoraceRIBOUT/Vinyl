@@ -50,20 +50,28 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         //Hit
-        hitIn = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name.Contains("hit");
-
         if (Input.GetAxis("Fire1") != 0)
         {
+            hitIn = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name.Contains("hit");
+            print("Clip = " + _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name);
+
             if (jumpingIn)
             {
-                if(!hitIn)
+                if (!hitIn)
+                {
                     _animator.SetTrigger("JumpHit");
-                swipeActionAirEvent();
+                    swipeActionAirEvent();
+                }
             }
             else
+            {
                 if (!hitIn)
-                _animator.SetTrigger("Hit");
-                swipeActionGroundEvent();
+                {
+                    _animator.SetTrigger("Hit");
+                    swipeActionGroundEvent();
+                }
+            }
+                
         }
 
 
@@ -95,10 +103,7 @@ public class PlayerController : MonoBehaviour
         ///
         WorldMovement.BeatData datA = GameManager.instance.worldMove.beatDatas[currentIndex];
         WorldMovement.BeatData datB = GameManager.instance.worldMove.beatDatas[currentIndex + 1];
-        WorldMovement.BeatData datA_ = GameManager.instance.worldMove.beatDatas[currentIndex + 1];
-        WorldMovement.BeatData datB_ = GameManager.instance.worldMove.beatDatas[currentIndex + 2];
-        Transform dotA = datA_.dot.transform;
-        Transform dotB = datB_.dot.transform;
+        
 
         float distanceFaite = (progression - (datA.timeSum * inverseMovement.x));
 
@@ -111,21 +116,28 @@ public class PlayerController : MonoBehaviour
 
         Vector3 posReal = Vector3.Lerp(datA.dot.transform.position, datB.dot.transform.position, lerpValue);
 
-        if(lerpValue > 1)
-        {
-           // Debug.Log("distanceAFaire = "+ distanceAFaire + " datA.timeSum : "+ datA.timeSum + " datB.beat = "+ datB.beatTiming + " ");
-            currentIndex++;
-            //HERE : change the target dot
-            //I think it's here where we need to change the rotation
-            float h = Mathf.Sqrt(Mathf.Pow(dotB.position.x - dotA.position.x, 2) + Mathf.Pow(dotB.position.y - dotB.position.y, 2));
-            Vector3 v = dotB.position - dotA.position;
-            Vector3 normV = new Vector3(-v.y, v.x, 0) / Mathf.Sqrt(Mathf.Pow(v.x, 2) + Mathf.Pow(v.y,2)) * h;
-            if (jumpingIn == false)
+            if(lerpValue > 1 && !WorldMovement.theEnd)
             {
-                jumpingPart.up = normV;
-            }
 
-        }
+            
+            WorldMovement.BeatData datB_ = GameManager.instance.worldMove.beatDatas[currentIndex + 2];
+            Transform dotA = datB.dot.transform;
+            Transform dotB = datB_.dot.transform;
+            // Debug.Log("distanceAFaire = "+ distanceAFaire + " datA.timeSum : "+ datA.timeSum + " datB.beat = "+ datB.beatTiming + " ");
+            currentIndex++;
+                //HERE : change the target dot
+                //I think it's here where we need to change the rotation
+                float h = Mathf.Sqrt(Mathf.Pow(dotB.position.x - dotA.position.x, 2) + Mathf.Pow(dotB.position.y - dotB.position.y, 2));
+                Vector3 v = dotB.position - dotA.position;
+                Vector3 normV = new Vector3(-v.y, v.x, 0) / Mathf.Sqrt(Mathf.Pow(v.x, 2) + Mathf.Pow(v.y,2)) * h;
+                if (jumpingIn == false)
+                {
+                    jumpingPart.up = normV;
+                }
+
+            }
+        if (WorldMovement.theEnd)
+            jumpingPart.up = originUp;
 
         return posReal.y;
         ///
@@ -190,13 +202,13 @@ public class PlayerController : MonoBehaviour
     private void swipeActionGroundEvent()
     {
         AkSoundEngine.PostEvent(Sound_Manager.instance.SwipeActionGround.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionGround.Id);
+        //Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionGround.Id);
     }
 
     private void swipeActionAirEvent()
     {
         AkSoundEngine.PostEvent(Sound_Manager.instance.SwipeActionAir.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionAir.Id);
+        //Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionAir.Id);
     }
 
 }
