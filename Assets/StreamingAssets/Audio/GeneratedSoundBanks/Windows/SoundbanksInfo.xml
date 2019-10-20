@@ -21,7 +21,7 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1281810935" Name="Start" ObjectPath="\Events\Default Work Unit\Start" DurationType="OneShot" DurationMin="105.230774" DurationMax="105.230774"/>
+				<Event Id="1281810935" Name="Start" ObjectPath="\Events\Default Work Unit\Start" DurationType="OneShot" DurationMin="105.383827" DurationMax="105.383827"/>
 				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Test" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>

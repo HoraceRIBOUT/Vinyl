@@ -23,8 +23,6 @@ public class WorldMovement : MonoBehaviour
     public void Start()
     {
         GameManager.instance.player.inverseMovement = mainMovementSpeed * -1;
-
-        StartCoroutine(createDotRegulary());
     }
 
     public void Update()
@@ -53,15 +51,18 @@ public class WorldMovement : MonoBehaviour
         }
     }
 
+    float lastBeatTime = 0;
 
-    IEnumerator createDotRegulary()
+    public void Beat()
     {
-        while (true)
-        {
-            CreateNextDot();
-            yield return new WaitForSeconds(2f);
-        }
+        //calcul how long between each beat :
+        //print("Beat timing : " + Time.timeSinceLevelLoad - lastBeatTime);
+        lastBeatTime = Time.timeSinceLevelLoad;
+
+        CreateNextDot();
+
     }
+    
 
 
     void CreateNextDot()
