@@ -6,6 +6,7 @@ public class Needle : MonoBehaviour
 {
    
     public bool playable = true;
+    public float groove = 0.3f;
     
     [Header("Heighness")]
     private WorldMovement worldMove;
@@ -63,6 +64,8 @@ public class Needle : MonoBehaviour
             }
 
             y = posReal.y;
+
+            groove++;
         }
                
                
