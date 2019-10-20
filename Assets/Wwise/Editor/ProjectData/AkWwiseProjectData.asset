@@ -59,8 +59,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Start
       maxAttenuation: 0
-      maxDuration: 105.230774
-      minDuration: 105.230774
+      maxDuration: 106.153854
+      minDuration: 106.153854
     - name: Test
       guid: 62009ca15e10ff408f08fb0e2124026a
       id: 3157003241
