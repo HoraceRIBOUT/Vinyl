@@ -99,7 +99,6 @@ public class PlayerController : MonoBehaviour
 
         float distanceAFaire = datB.beatTiming * inverseMovement.x;
 
-
         float lerpValue = distanceFaite / distanceAFaire;
 
         seeOtherValue = lerpValue;
