@@ -41,6 +41,10 @@ public class WorldMovement : MonoBehaviour
     public float timeSum = 0;
 
 
+    [Header("Ground drawing")]
+    public GameObject groundObj;
+
+
     public void Start()
     {
         GameManager.instance.player.inverseMovement = mainMovementSpeed * -1;
@@ -104,8 +108,26 @@ public class WorldMovement : MonoBehaviour
 
         //useless but still
         eachDotFromMusique.Add(gO.transform);
+
+
+        //Create ground between two dot : 
+        if (eachDotFromMusique.Count > 1)
+            CreateGround(eachDotFromMusique[eachDotFromMusique.Count - 2].position, eachDotFromMusique[eachDotFromMusique.Count - 1].position);
     }
 
+    void CreateGround(Vector3 dotA, Vector3 dotB)
+    {
+        Vector3 positionGr = (dotA + dotB) / 2f;
+        float ratio = (dotB.y - dotA.y) / (dotB.x - dotA.x);
+        float zValue = Mathf.Rad2Deg*Mathf.Atan(ratio);
+        Quaternion rotationGr = Quaternion.Euler(0, 0, zValue);
+        Debug.Log("Ratio : " + ratio + " zVal = " + zValue + " quaternion = " + rotationGr);
+
+        GameObject groundObject = Instantiate(groundObj, positionGr, rotationGr, strateWhoMoves[0].main.transform);
+        float magnitudeOfDifference = (dotB - dotA).magnitude;
+        
+        groundObject.transform.localScale += Vector3.right * magnitudeOfDifference - Vector3.right;
+    }
 
 
 

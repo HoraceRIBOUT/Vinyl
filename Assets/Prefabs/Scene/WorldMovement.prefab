@@ -51,7 +51,8 @@ MonoBehaviour:
   - main: {fileID: 1050190622874772762}
   mainMovementSpeed: {x: -7, y: 0, z: 0}
   movementSlowPerStrate: 0.5
-  eachDotFromMusique: []
+  eachDotFromMusique:
+  - {fileID: 6233721136554785985}
   dotGameObject: {fileID: 8029099141543554500, guid: 9766bfae2abb1724b87aaf432ccddc26,
     type: 3}
   spawnPoint: {fileID: 6653141711691998729}
@@ -384,6 +385,8 @@ MonoBehaviour:
     beatTiming: 0
   currentSpawningIndex: 1
   timeSum: 0
+  groundObj: {fileID: 5421135384604130114, guid: 48f3caa289ddaa448ac1df31013e70c6,
+    type: 3}
 --- !u!1 &1050190622375294500
 GameObject:
   m_ObjectHideFlags: 0
