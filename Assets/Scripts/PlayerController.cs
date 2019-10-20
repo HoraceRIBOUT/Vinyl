@@ -20,14 +20,12 @@ public class PlayerController : MonoBehaviour
     [Header("Jump part")]
     public string jumpAxis = "Jump";
     public Transform jumpingPart;
-    /*public Vector3 jumpForce;//?
-    */
+    public bool jumpingIn = false;
 
     public AnimationCurve jumpCurve;
     public Vector2 speedOnBothAxis = new Vector2(1, 1);
-    public bool jumpingIn = false;
 
-
+    public bool hitIn = false;
     
 
 
@@ -51,18 +49,20 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         //Hit
+        hitIn = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("hit");
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (jumpingIn)
             {
-                if(!_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("hit"))
+                if(!hitIn)
                     _animator.SetTrigger("JumpHit");
             }
             else
-                if (!_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("hit"))
+                if (!hitIn)
                 _animator.SetTrigger("Hit");
         }
-        
+
 
         //Follow the ground : 
         float y = 0;
@@ -110,6 +110,8 @@ public class PlayerController : MonoBehaviour
         {
            // Debug.Log("distanceAFaire = "+ distanceAFaire + " datA.timeSum : "+ datA.timeSum + " datB.beat = "+ datB.beatTiming + " ");
             currentIndex++;
+            //HERE : change the target dot
+            //I think it's here where we need to change the rotation
         }
 
         return posReal.y;
@@ -118,12 +120,13 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        Debug.Log("Jump");
+        //Debug.Log("Jump");
         StartCoroutine(jumping());
     }
 
     IEnumerator jumping()
     {
+        //launch Jump
         _animator.SetBool("Jump", true);
         jumpingIn = true;
         float timer = 0;
@@ -140,6 +143,8 @@ public class PlayerController : MonoBehaviour
         jumpingPart.localPosition = new Vector3(jumpingPart.localPosition.x, 0, jumpingPart.localPosition.z);
         jumpingIn = false;
         _animator.SetBool("Jump", false);
+
+        //end jump
     }
 
     /*

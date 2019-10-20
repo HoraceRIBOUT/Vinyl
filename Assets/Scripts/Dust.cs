@@ -8,7 +8,6 @@ public class Dust : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Coll "+collision.name);
 
         PlayerController pC = collision.gameObject.GetComponentInParent<PlayerController>();
         if (pC != null)
