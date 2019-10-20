@@ -50,20 +50,20 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         //Hit
-        hitIn = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("hit");
+        hitIn = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name.Contains("hit");
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetAxis("Fire1") != 0)
         {
             if (jumpingIn)
             {
                 if(!hitIn)
                     _animator.SetTrigger("JumpHit");
-                //swipeActionAirEvent();
+                swipeActionAirEvent();
             }
             else
                 if (!hitIn)
                 _animator.SetTrigger("Hit");
-                //swipeActionGroundEvent();
+                swipeActionGroundEvent();
         }
 
 

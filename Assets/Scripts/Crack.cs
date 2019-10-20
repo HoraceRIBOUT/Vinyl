@@ -39,7 +39,7 @@ public class Crack : MonoBehaviour
         alive = false;
         crackAnim.speed = 1;
         StartCoroutine(disapearRoseRound(1f, true));
-        //scratchRepairedEvent();
+        scratchRepairedEvent();
     }
 
     IEnumerator disapearRoseRound(float speed, bool player)
