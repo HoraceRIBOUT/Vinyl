@@ -50,20 +50,28 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         //Hit
-        hitIn = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name.Contains("hit");
-
         if (Input.GetAxis("Fire1") != 0)
         {
+            hitIn = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name.Contains("hit");
+            print("Clip = " + _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name);
+
             if (jumpingIn)
             {
-                if(!hitIn)
+                if (!hitIn)
+                {
                     _animator.SetTrigger("JumpHit");
-                swipeActionAirEvent();
+                    swipeActionAirEvent();
+                }
             }
             else
+            {
                 if (!hitIn)
-                _animator.SetTrigger("Hit");
-                swipeActionGroundEvent();
+                {
+                    _animator.SetTrigger("Hit");
+                    swipeActionGroundEvent();
+                }
+            }
+                
         }
 
 
@@ -190,13 +198,13 @@ public class PlayerController : MonoBehaviour
     private void swipeActionGroundEvent()
     {
         AkSoundEngine.PostEvent(Sound_Manager.instance.SwipeActionGround.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionGround.Id);
+        //Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionGround.Id);
     }
 
     private void swipeActionAirEvent()
     {
         AkSoundEngine.PostEvent(Sound_Manager.instance.SwipeActionAir.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionAir.Id);
+        //Debug.Log("Call the event " + Sound_Manager.instance.SwipeActionAir.Id);
     }
 
 }
