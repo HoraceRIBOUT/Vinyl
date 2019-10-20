@@ -672,6 +672,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: WorldMovement
       objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: eachDotFromMusique.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: groundObj
+      value: 
+      objectReference: {fileID: 5421135384604130114, guid: 48f3caa289ddaa448ac1df31013e70c6,
+        type: 3}
+    - target: {fileID: 1050190622166163207, guid: 9653030391b02404dabbf6f4d1b2bb61,
+        type: 3}
+      propertyPath: eachDotFromMusique.Array.data[0]
+      value: 
+      objectReference: {fileID: 1050190623409348093}
     - target: {fileID: 1050190622389294247, guid: 9653030391b02404dabbf6f4d1b2bb61,
         type: 3}
       propertyPath: debugVal
@@ -734,3 +750,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9653030391b02404dabbf6f4d1b2bb61, type: 3}
+--- !u!4 &1050190623409348093 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6233721136554785985, guid: 9653030391b02404dabbf6f4d1b2bb61,
+    type: 3}
+  m_PrefabInstance: {fileID: 1050190623409348092}
+  m_PrefabAsset: {fileID: 0}
