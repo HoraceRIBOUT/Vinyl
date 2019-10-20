@@ -6,6 +6,5 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	112375983	Wwise Sine	Wwise Sine		\Actor-Mixer Hierarchy\Default Work Unit\Test\Wwise Sine	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	660741189	VinylRythm01	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\VinylOST02_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMusic\Rythm\VinylRythm01		18725604
-
+	882371464	VinylRythm01	D:\Users\Thomas\Documents\Personal\Education\CNAM Enjmin\2019\ENJAM_Vinyl\Vinyl\Vinyl_WwiseProject\.cache\Windows\SFX\VinylOST03_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMusic\Rythm\VinylRythm01		19209788
 
