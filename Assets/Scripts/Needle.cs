@@ -6,6 +6,7 @@ public class Needle : MonoBehaviour
 {
    
     public bool playable = true;
+    public float groove = 0.3f;
     
     [Header("Heighness")]
     private WorldMovement worldMove;
@@ -63,6 +64,8 @@ public class Needle : MonoBehaviour
             }
 
             y = posReal.y;
+
+            groove++;
         }
                
                
@@ -73,4 +76,36 @@ public class Needle : MonoBehaviour
         progression += Time.deltaTime * (inverseMovement.x);
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    { 
+        Dust dust = collision.gameObject.GetComponentInParent<Dust>();
+        Crack crack = collision.gameObject.GetComponentInParent<Crack>();
+
+        if (dust != null)
+        {
+            //dustMissedEvent();
+            dust.dead = true;
+            dust.GetComponentInChildren<Animator>().SetTrigger("Death");
+            Invoke("Death", 2f);
+
+        }
+
+        if (crack != null)
+        {
+            //scratchMissedEvent();
+            crack.objectiveDeath();
+        }
+    }
+
+    private void dustMissedEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.DustMissed.Id, this.gameObject);
+        Debug.Log("Call the event " + Sound_Manager.instance.DustMissed.Id);
+    }
+
+    private void scratchMissedEvent()
+    {
+        AkSoundEngine.PostEvent(Sound_Manager.instance.ScratchMissed.Id, this.gameObject);
+        Debug.Log("Call the event " + Sound_Manager.instance.ScratchMissed.Id);
+    }
 }

@@ -16,6 +16,13 @@ public class Sound_Manager : MonoBehaviour
 
     public AK.Wwise.Event testEvent;
     public AK.Wwise.Event startEvent;
+    public AK.Wwise.Event DustPickup;
+    public AK.Wwise.Event DustMissed;
+    public AK.Wwise.Event ScratchRepaired;
+    public AK.Wwise.Event ScratchMissed;
+    public AK.Wwise.Event SwipeActionGround;
+    public AK.Wwise.Event SwipeActionAir;
+    public AK.Wwise.Event GameOver;
 
     //BEAT
     float lastBeatTime = 0;

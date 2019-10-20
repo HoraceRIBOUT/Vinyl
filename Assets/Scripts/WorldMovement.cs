@@ -121,7 +121,7 @@ public class WorldMovement : MonoBehaviour
         float ratio = (dotB.y - dotA.y) / (dotB.x - dotA.x);
         float zValue = Mathf.Rad2Deg*Mathf.Atan(ratio);
         Quaternion rotationGr = Quaternion.Euler(0, 0, zValue);
-        Debug.Log("Ratio : " + ratio + " zVal = " + zValue + " quaternion = " + rotationGr);
+        //Debug.Log("Ratio : " + ratio + " zVal = " + zValue + " quaternion = " + rotationGr);
 
         GameObject groundObject = Instantiate(groundObj, positionGr, rotationGr, strateWhoMoves[0].main.transform);
         float magnitudeOfDifference = (dotB - dotA).magnitude;
