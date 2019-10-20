@@ -18,6 +18,9 @@ public class Needle : MonoBehaviour
     private int currentIndex = 0;
     private Vector3 inverseMovement;
 
+
+    public UnityEngine.UI.Slider grooveUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +69,7 @@ public class Needle : MonoBehaviour
 
             y = posReal.y;
 
-            groove++;
+            groove += Time.deltaTime * 0.1f;
         }
                
                
@@ -75,6 +78,9 @@ public class Needle : MonoBehaviour
         this.transform.Translate(movement);
 
         progression += Time.deltaTime * (inverseMovement.x);
+
+
+        grooveUI.value = groove;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -91,7 +97,7 @@ public class Needle : MonoBehaviour
             dust.dead = true;
             dust.GetComponentInChildren<Animator>().SetTrigger("Death");
             Invoke("Death", 2f);
-            groove -= 100f;
+            groove -= 0.005f;
 
             if(groove < 0)
             {
