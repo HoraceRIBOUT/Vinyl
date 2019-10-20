@@ -83,7 +83,7 @@ public class Sound_Manager : MonoBehaviour
     private void TestEvent()
     {
             AkSoundEngine.PostEvent(testEvent.Id, this.gameObject);
-            Debug.Log("Call the event " + testEvent.Id);
+           // Debug.Log("Call the event " + testEvent.Id);
     }
 
 

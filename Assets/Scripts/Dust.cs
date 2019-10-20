@@ -25,7 +25,7 @@ public class Dust : MonoBehaviour
     private void dustPickupEvent()
     {
         AkSoundEngine.PostEvent(Sound_Manager.instance.DustPickup.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.DustPickup.Id);
+//        Debug.Log("Call the event " + Sound_Manager.instance.DustPickup.Id);
     }
 
     void Death()

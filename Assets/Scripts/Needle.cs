@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Needle : MonoBehaviour
 {
@@ -82,6 +83,12 @@ public class Needle : MonoBehaviour
 
 
         grooveUI.value = groove;
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            Application.Quit();
+        }
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -103,7 +110,7 @@ public class Needle : MonoBehaviour
             dust.dead = true;
             dust.GetComponentInChildren<Animator>().SetTrigger("Death");
             Invoke("Death", 2f);
-            groove -= 1f;
+            groove -= 0.05f;
 
             if(groove <= 0)
             {
@@ -111,6 +118,8 @@ public class Needle : MonoBehaviour
                 WorldMovement.gameover = true;
                 animPlayer.SetTrigger("TOMBE");
                 gameoverEvent();
+
+               
             }
         }
 

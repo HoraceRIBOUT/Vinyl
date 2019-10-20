@@ -62,7 +62,7 @@ public class Crack : MonoBehaviour
     private void scratchRepairedEvent()
     {
         AkSoundEngine.PostEvent(Sound_Manager.instance.ScratchRepaired.Id, this.gameObject);
-        Debug.Log("Call the event " + Sound_Manager.instance.ScratchRepaired.Id);
+        //Debug.Log("Call the event " + Sound_Manager.instance.ScratchRepaired.Id);
     }
 
 }

@@ -46,12 +46,23 @@ public class WorldMovement : MonoBehaviour
     [Header("Ground drawing")]
     public GameObject groundObj;
 
+    public MeshFilter THEGROUND;
 
     public void Start()
     {
         theEnd = false;
         gameover = false;
         GameManager.instance.player.inverseMovement = mainMovementSpeed * -1;
+
+
+       /* List<Vector3> vertex = new List<Vector3>(THEGROUND.mesh.vertices);
+
+        vertex[2] = new Vector3(-8,0,0);
+        vertex[3] = new Vector3(11,0,0);
+        vertex[0] = new Vector3(-8,-10,0);
+        vertex[1] = new Vector3(11, -10, 0);
+
+        THEGROUND.mesh.SetVertices(vertex);*/
     }
 
     public void Update()
@@ -110,7 +121,6 @@ public class WorldMovement : MonoBehaviour
         currentSpawningIndex++;
         if(beatDatas.Count == currentSpawningIndex)
         {
-
             theEnd = true;
             Debug.LogError("We are on the end my friend ");
         }
@@ -122,6 +132,24 @@ public class WorldMovement : MonoBehaviour
         //Create ground between two dot : 
         if (eachDotFromMusique.Count > 1)
             CreateGround(eachDotFromMusique[eachDotFromMusique.Count - 2].position, eachDotFromMusique[eachDotFromMusique.Count - 1].position);
+
+        /*
+        List<Vector3> vertex = new List<Vector3>(THEGROUND.mesh.vertices);
+
+        vertex[1] = new Vector3(gO.transform.position.x + gO.transform.localPosition.x, -10, 0);
+        vertex.Add(gO.transform.position + gO.transform.localPosition);
+        Debug.Log("Position : " + (gO.transform.position + gO.transform.localPosition));
+
+        THEGROUND.mesh.SetVertices(vertex);
+
+        
+        List<int> triangleSs = new List<int>(THEGROUND.mesh.GetTriangles(0));
+        triangleSs.Add(2);
+        triangleSs.Add(vertex.Count - 1);
+        triangleSs.Add(vertex.Count - 2);
+
+
+        THEGROUND.mesh.SetTriangles(triangleSs, 0);*/
     }
 
     void CreateGround(Vector3 dotA, Vector3 dotB)
