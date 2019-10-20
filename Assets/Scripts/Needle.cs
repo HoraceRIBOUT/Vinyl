@@ -10,6 +10,7 @@ public class Needle : MonoBehaviour
     [Header("Heighness")]
     private WorldMovement worldMove;
     public float progression = -22;
+    public Transform smoke;
 
 
     private int currentIndex = 0;
@@ -25,6 +26,7 @@ public class Needle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!playable)
             return;
 
@@ -35,7 +37,10 @@ public class Needle : MonoBehaviour
             WorldMovement.BeatData datA = GameManager.instance.worldMove.beatDatas[currentIndex];
             WorldMovement.BeatData datB = GameManager.instance.worldMove.beatDatas[currentIndex + 1];
 
-
+            WorldMovement.BeatData datA_ = GameManager.instance.worldMove.beatDatas[currentIndex + 1];
+            WorldMovement.BeatData datB_ = GameManager.instance.worldMove.beatDatas[currentIndex + 2];
+            Transform dotA = datA_.dot.transform;
+            Transform dotB = datB_.dot.transform;
 
             float distanceFaite = (progression - (datA.timeSum * inverseMovement.x));
             float distanceAFaire = datB.beatTiming * inverseMovement.x;
@@ -49,7 +54,12 @@ public class Needle : MonoBehaviour
             {
                 currentIndex++;
                 //HERE : change the target dot
-                //I think it's here where we need to change the rotation
+                float h = Mathf.Sqrt(Mathf.Pow(dotB.position.x - dotA.position.x, 2) + Mathf.Pow(dotB.position.y - dotB.position.y, 2));
+                Vector3 v = dotB.position - dotA.position;
+                Vector3 normV = new Vector3(-v.y, v.x, 0) / Mathf.Sqrt(Mathf.Pow(v.x, 2) + Mathf.Pow(v.y, 2)) * h;
+                smoke.up = normV;
+
+
             }
 
             y = posReal.y;
