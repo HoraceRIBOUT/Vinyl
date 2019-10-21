@@ -46,14 +46,14 @@ public class PlayerController : MonoBehaviour
             return;
 
         //Jump
-        if (Input.GetAxis(jumpAxis) != 0 && !jumpingIn)
+        if (Mathf.Abs(Input.GetAxis(jumpAxis)) > 0.5f && !jumpingIn)
             Jump();
 
         //Hit
         hitIn = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name.Contains("hit");
         if (Input.GetAxis("Fire1") != 0)
         {
-            print("Clip = " + _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name);
+            //print("Clip = " + _animator.GetCurrentAnimatorClipInfo(1)[0].clip.name);
 
             if (jumpingIn)
             {
@@ -145,29 +145,50 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        jumpingIn = true;
+        if (debugCube.color == Color.blue)
+            debugCube.color = Color.green;
+        else
+            debugCube.color = Color.blue;
         //Debug.Log("Jump");
         StartCoroutine(jumping());
     }
+
+    public SpriteRenderer debugCube;
 
     IEnumerator jumping()
     {
         //launch Jump
         jumpingPart.up = originUp;
         _animator.SetBool("Jump", true);
-        jumpingIn = true;
+
+
         float timer = 0;
+
+
+
         while (jumpingPart.localPosition.y >= 0)
         {
             float y = 0;
 
-            timer += Time.deltaTime;
-            y = jumpCurve.Evaluate(timer * speedOnBothAxis.x) * speedOnBothAxis.y;
+
+            timer += Time.fixedDeltaTime;// * speedOnBothAxis.x;
+
+
+
+            y = jumpCurve.Evaluate(timer) * speedOnBothAxis.y;
+
+            debugCube.transform.localScale = Vector3.one * 0.05f * timer;
 
             jumpingPart.localPosition = new Vector3(jumpingPart.localPosition.x, y, jumpingPart.localPosition.z); //brrr,non pas ça, beurk
-            yield return new WaitForSeconds(1f / 30f);
+            yield return new WaitForFixedUpdate();
+
+            if (timer > 1.1f)
+                Debug.LogError("Yes, I overslept");
         }
         jumpingPart.localPosition = new Vector3(jumpingPart.localPosition.x, 0, jumpingPart.localPosition.z);
         jumpingIn = false;
+        debugCube.color = Color.red;
         _animator.SetBool("Jump", false);
 
         //end jump

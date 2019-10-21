@@ -33,6 +33,10 @@ public class Needle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.R) || Input.GetKey(KeyCode.Q))
+        {
+            Application.Quit();
+        }
 
         if (!playable)
             return;
@@ -71,7 +75,7 @@ public class Needle : MonoBehaviour
 
             y = posReal.y;
             if(groove < 1)
-            groove += Time.deltaTime * 0.01f;
+            groove += Time.deltaTime * 0.02f;
 
         }
                
@@ -85,10 +89,6 @@ public class Needle : MonoBehaviour
 
         grooveUI.value = groove;
 
-        if (Input.GetKey(KeyCode.R))
-        {
-            Application.Quit();
-        }
 
     }
 
@@ -113,7 +113,7 @@ public class Needle : MonoBehaviour
             Invoke("Death", 2f);
             groove -= 0.05f;
 
-            if(groove <= 0)
+            if (groove <= 0)
             {
                 Debug.Log("YOU DIED");
                 WorldMovement.gameover = true;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7128775121483784083}
   - component: {fileID: 3326526631381157278}
   m_Layer: 0
-  m_Name: d_0001s_0004_fissure
+  m_Name: Fissures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cd7b5f5aed59a2e4eb03e85e2b51b4d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -167,6 +167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6696581607171440564, guid: 5ab37aeb9ad3d844c8d1ce879709cad5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab37aeb9ad3d844c8d1ce879709cad5, type: 3}

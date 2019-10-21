@@ -13,10 +13,10 @@ public class CrackDetection : MonoBehaviour
         PlayerController plyCtr = other.GetComponentInParent<PlayerController>();
         if (plyCtr != null)
         {
-            Debug.Log("Player");
+            //Debug.Log("Player");
             if (plyCtr.hitIn)
             {
-                Debug.Log("And hit ! !");
+                //Debug.Log("And hit ! !");
                 GetComponentInParent<Crack>().HitThis();
             }
         }
