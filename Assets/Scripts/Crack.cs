@@ -38,7 +38,7 @@ public class Crack : MonoBehaviour
         Debug.Log("And hit ! !");
         alive = false;
         crackAnim.speed = 1;
-        StartCoroutine(disapearRoseRound(1f, true));
+        StartCoroutine(disapearRoseRound(3f, true));
         scratchRepairedEvent();
     }
 
@@ -47,7 +47,7 @@ public class Crack : MonoBehaviour
         while(sR_Circle.color.a > 0)
         {
             sR_Circle.color -= colorToGoDown * Time.deltaTime * speed;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.001f);
         }
 
         if(player == true)
@@ -56,7 +56,7 @@ public class Crack : MonoBehaviour
 
     public void objectiveDeath()
     {
-        StartCoroutine(disapearRoseRound(12f, false));
+        StartCoroutine(disapearRoseRound(9f, false));
     }
 
     private void scratchRepairedEvent()

@@ -55,14 +55,33 @@ public class WorldMovement : MonoBehaviour
         GameManager.instance.player.inverseMovement = mainMovementSpeed * -1;
 
 
-       /* List<Vector3> vertex = new List<Vector3>(THEGROUND.mesh.vertices);
+        SetMesh();//THEGROUND ! not any mesh!!!
+    }
 
-        vertex[2] = new Vector3(-8,0,0);
-        vertex[3] = new Vector3(11,0,0);
-        vertex[0] = new Vector3(-8,-10,0);
-        vertex[1] = new Vector3(11, -10, 0);
+    [ContextMenu("SetMeshPos")]
+    public void SetMesh()
+    {
+        List<Vector3> vertex = new List<Vector3>(THEGROUND.mesh.vertices);
 
-        THEGROUND.mesh.SetVertices(vertex);*/
+        vertex[0] = new Vector3(-8, -1, 0);
+        vertex[2] = new Vector3(11, -1, 0);
+        vertex[1] = new Vector3(-8, -10, 0);
+        vertex[3] = new Vector3(11, -10, 0);
+
+        THEGROUND.mesh.SetVertices(vertex);
+        //
+        List<int> triangleSs = new List<int>(THEGROUND.mesh.GetTriangles(0));
+
+        triangleSs[0] = 0;
+        triangleSs[1] = 2;
+        triangleSs[2] = 1;
+        triangleSs[3] = 2;
+        triangleSs[4] = 3;
+        triangleSs[5] = 1;
+
+        THEGROUND.mesh.SetTriangles(triangleSs, 0);
+
+        THEGROUND.mesh.RecalculateBounds();
     }
 
     public void Update()
@@ -133,24 +152,36 @@ public class WorldMovement : MonoBehaviour
         if (eachDotFromMusique.Count > 1)
             CreateGround(eachDotFromMusique[eachDotFromMusique.Count - 2].position, eachDotFromMusique[eachDotFromMusique.Count - 1].position);
 
-        /*
+
+
+
+        UpdateGroundMesh(gO.transform.localPosition.x, gO.transform.localPosition.y);
+    }
+
+    public void UpdateGroundMesh(float xPos, float yPos)
+    {
         List<Vector3> vertex = new List<Vector3>(THEGROUND.mesh.vertices);
 
-        vertex[1] = new Vector3(gO.transform.position.x + gO.transform.localPosition.x, -10, 0);
-        vertex.Add(gO.transform.position + gO.transform.localPosition);
-        Debug.Log("Position : " + (gO.transform.position + gO.transform.localPosition));
+        int indexNewDot = vertex.Count;
+        vertex.Add(new Vector3(xPos, yPos, 0));//indexNewDot 
+        vertex.Add(new Vector3(xPos,  -10, 0));//indexNewDot + 1
 
         THEGROUND.mesh.SetVertices(vertex);
-
-        
+        //
         List<int> triangleSs = new List<int>(THEGROUND.mesh.GetTriangles(0));
-        triangleSs.Add(2);
-        triangleSs.Add(vertex.Count - 1);
-        triangleSs.Add(vertex.Count - 2);
+        
+        triangleSs.Add(indexNewDot - 2);
+        triangleSs.Add(indexNewDot);
+        triangleSs.Add(indexNewDot - 1);
+        triangleSs.Add(indexNewDot);
+        triangleSs.Add(indexNewDot + 1);
+        triangleSs.Add(indexNewDot - 1);
+        
+        THEGROUND.mesh.SetTriangles(triangleSs, 0);
 
-
-        THEGROUND.mesh.SetTriangles(triangleSs, 0);*/
+        THEGROUND.mesh.RecalculateBounds();
     }
+
 
     void CreateGround(Vector3 dotA, Vector3 dotB)
     {
